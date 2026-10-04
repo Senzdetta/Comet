@@ -1,11 +1,11 @@
-// https://github.com/Zeronetsec/Comet
+// https://github.com/Senzdetta/Comet
 
 package main
 
 import (
     "os"
     "strings"
-    "github.com/Zeronetsec/Comet/console"
+    "github.com/Senzdetta/Comet/console"
 )
 
 func main() {
@@ -14,4 +14,4 @@ func main() {
     console.CometConsole(input)
 }
 
-// Copyright (c) 2026 Zeronetsec
+// Copyright (c) 2026 Senzdetta

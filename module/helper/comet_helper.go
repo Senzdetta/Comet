@@ -1,4 +1,4 @@
-// https://github.com/Zeronetsec/Comet
+// https://github.com/Senzdetta/Comet
 
 package helper
 
@@ -7,9 +7,9 @@ import (
     "fmt"
     "encoding/json"
     "io/fs"
-    "github.com/Zeronetsec/Comet/utils/color"
-    "github.com/Zeronetsec/Comet/utils/banner"
-    "github.com/Zeronetsec/Comet/utils/birthday"
+    "github.com/Senzdetta/Comet/utils/color"
+    "github.com/Senzdetta/Comet/utils/banner"
+    "github.com/Senzdetta/Comet/utils/birthday"
 )
 
 //go:embed metadata/*
@@ -68,4 +68,4 @@ func CometHelper() {
     }
 }
 
-// Copyright (c) 2026 Zeronetsec
+// Copyright (c) 2026 Senzdetta

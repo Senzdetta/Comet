@@ -1,4 +1,4 @@
-// https://github.com/Zeronetsec/Comet
+// https://github.com/Senzdetta/Comet
 
 package corsscan
 
@@ -40,4 +40,4 @@ func readTarget(input string) ([]string, error) {
     return targets, nil
 }
 
-// Copyright (c) 2026 Zeronetsec
+// Copyright (c) 2026 Senzdetta

@@ -1,10 +1,10 @@
-// https://github.com/Zeronetsec/Comet
+// https://github.com/Senzdetta/Comet
 
 package console
 
 import (
     "os"
-    "github.com/Zeronetsec/Comet/utils/invinput"
+    "github.com/Senzdetta/Comet/utils/invinput"
 )
 
 func CometConsole(input string) {
@@ -40,4 +40,4 @@ func CometConsole(input string) {
     }
 }
 
-// Copyright (c) 2026 Zeronetsec
+// Copyright (c) 2026 Senzdetta

@@ -1,4 +1,4 @@
-// https://github.com/Zeronetsec/Comet
+// https://github.com/Senzdetta/Comet
 
 package console
 
@@ -6,9 +6,9 @@ import (
     "fmt"
     "os"
     "strconv"
-    "github.com/Zeronetsec/Comet/module/paramscan"
-    "github.com/Zeronetsec/Comet/utils/color"
-    "github.com/Zeronetsec/Comet/utils/invinput"
+    "github.com/Senzdetta/Comet/module/paramscan"
+    "github.com/Senzdetta/Comet/utils/color"
+    "github.com/Senzdetta/Comet/utils/invinput"
 )
 
 type Paramscan struct{}
@@ -88,4 +88,4 @@ func (c Paramscan) Execute(args []string) {
     )
 }
 
-// Copyright (c) 2026 Zeronetsec
+// Copyright (c) 2026 Senzdetta

@@ -1,4 +1,4 @@
-// https://github.com/Zeronetsec/Comet
+// https://github.com/Senzdetta/Comet
 
 package portscan
 
@@ -6,7 +6,7 @@ import (
     "fmt"
     "strings"
     "strconv"
-    "github.com/Zeronetsec/Comet/utils/color"
+    "github.com/Senzdetta/Comet/utils/color"
 )
 
 func ParseRange(input string) (int, int, error) {
@@ -44,4 +44,4 @@ func ParseRange(input string) (int, int, error) {
     return start, end, nil
 }
 
-// Copyright (c) 2026 Zeronetsec
+// Copyright (c) 2026 Senzdetta

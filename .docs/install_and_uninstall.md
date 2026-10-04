@@ -7,7 +7,7 @@
 
 ### Usage
 ```bash
-git clone https://github.com/Zeronetsec/Comet
+git clone https://github.com/Senzdetta/Comet
 bash Comet/install.sh <option>
 ```
 

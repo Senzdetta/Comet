@@ -1,4 +1,4 @@
-// https://github.com/Zeronetsec/Comet
+// https://github.com/Senzdetta/Comet
 
 package console
 
@@ -6,9 +6,9 @@ import (
     "fmt"
     "os"
     "strconv"
-    "github.com/Zeronetsec/Comet/utils/invinput"
-    "github.com/Zeronetsec/Comet/utils/color"
-    "github.com/Zeronetsec/Comet/module/tracelink"
+    "github.com/Senzdetta/Comet/utils/invinput"
+    "github.com/Senzdetta/Comet/utils/color"
+    "github.com/Senzdetta/Comet/module/tracelink"
 )
 
 type Tracelink struct{}
@@ -48,4 +48,4 @@ func (c Tracelink) Execute(args []string) {
     tracelink.Tracer(target, threads, recursive)
 }
 
-// Copyright (c) 2026 Zeronetsec
+// Copyright (c) 2026 Senzdetta

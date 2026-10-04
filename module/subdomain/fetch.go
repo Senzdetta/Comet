@@ -1,4 +1,4 @@
-// https://github.com/Zeronetsec/Comet
+// https://github.com/Senzdetta/Comet
 
 package subdomain
 
@@ -46,7 +46,7 @@ func Fetch(
 
         req.Header.Set(
             "User-Agent",
-            "https://github.com/Zeronetsec/Comet",
+            "https://github.com/Senzdetta/Comet",
         )
 
         resp, err = client.Do(req)
@@ -103,4 +103,4 @@ func Fetch(
     return sortedSubs, nil
 }
 
-// Copyright (c) 2026 Zeronetsec
+// Copyright (c) 2026 Senzdetta

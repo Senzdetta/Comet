@@ -1,4 +1,4 @@
-// https://github.com/Zeronetsec/Comet
+// https://github.com/Senzdetta/Comet
 
 package paramscan
 
@@ -12,8 +12,8 @@ import (
     "time"
     "net/http"
     "net/url"
-    "github.com/Zeronetsec/Comet/utils/color"
-    "github.com/Zeronetsec/Comet/utils/logger"
+    "github.com/Senzdetta/Comet/utils/color"
+    "github.com/Senzdetta/Comet/utils/logger"
 )
 
 func FetchParameters(
@@ -71,7 +71,7 @@ func FetchParameters(
         req, _ := http.NewRequest("GET", apiURL, nil)
         req.Header.Set(
             "User-Agent",
-            "https://github.com/Zeronetsec/Comet",
+            "https://github.com/Senzdetta/Comet",
         )
 
         resp, err = client.Do(req)
@@ -218,7 +218,7 @@ func FetchParameters(
                     req, _ := http.NewRequest("GET", testURL, nil)
                     req.Header.Set(
                         "User-Agent",
-                        "https://github.com/Zeronetsec/Comet",
+                        "https://github.com/Senzdetta/Comet",
                     )
 
                     res, err := fuzzClient.Do(req)
@@ -251,4 +251,4 @@ func FetchParameters(
     summary(results)
 }
 
-// Copyright (c) 2026 Zeronetsec
+// Copyright (c) 2026 Senzdetta

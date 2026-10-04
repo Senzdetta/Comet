@@ -1,12 +1,12 @@
-// https://github.com/Zeronetsec/Comet
+// https://github.com/Senzdetta/Comet
 
 package console
 
 import (
     "os"
     "strconv"
-    "github.com/Zeronetsec/Comet/module/subdomain"
-    "github.com/Zeronetsec/Comet/utils/invinput"
+    "github.com/Senzdetta/Comet/module/subdomain"
+    "github.com/Senzdetta/Comet/utils/invinput"
 )
 
 type Subdomain struct{}
@@ -58,4 +58,4 @@ func (c Subdomain) Execute(args []string) {
     )
 }
 
-// Copyright (c) 2026 Zeronetsec
+// Copyright (c) 2026 Senzdetta

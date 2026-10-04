@@ -1,4 +1,4 @@
-// https://github.com/Zeronetsec/Comet
+// https://github.com/Senzdetta/Comet
 
 package sqlscan
 
@@ -15,4 +15,4 @@ func checkVulnerable(body string) (bool, string) {
     return false, ""
 }
 
-// Copyright (c) 2026 Zeronetsec
+// Copyright (c) 2026 Senzdetta

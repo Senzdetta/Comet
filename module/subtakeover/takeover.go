@@ -1,4 +1,4 @@
-// https://github.com/Zeronetsec/Comet
+// https://github.com/Senzdetta/Comet
 
 package subtakeover
 
@@ -10,9 +10,9 @@ import (
     "sync"
     "time"
     "net/http"
-    "github.com/Zeronetsec/Comet/module/subdomain"
-    "github.com/Zeronetsec/Comet/utils/color"
-    "github.com/Zeronetsec/Comet/utils/logger"
+    "github.com/Senzdetta/Comet/module/subdomain"
+    "github.com/Senzdetta/Comet/utils/color"
+    "github.com/Senzdetta/Comet/utils/logger"
 )
 
 func Takeover(
@@ -102,7 +102,7 @@ func Takeover(
 
                 req.Header.Set(
                     "User-Agent",
-                    "https://github.com/Zeronetsec/Comet",
+                    "https://github.com/Senzdetta/Comet",
                 )
 
                 resp, reqErr = client.Do(req)
@@ -114,7 +114,7 @@ func Takeover(
 
                     req.Header.Set(
                         "User-Agent",
-                        "https://github.com/Zeronetsec/Comet",
+                        "https://github.com/Senzdetta/Comet",
                     )
 
                     resp, reqErr = client.Do(req)
@@ -191,4 +191,4 @@ func Takeover(
     }
 }
 
-// Copyright (c) 2026 Zeronetsec
+// Copyright (c) 2026 Senzdetta

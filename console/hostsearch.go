@@ -1,12 +1,12 @@
-// https://github.com/Zeronetsec/Comet
+// https://github.com/Senzdetta/Comet
 
 package console
 
 import (
     "os"
     "strconv"
-    "github.com/Zeronetsec/Comet/module/hostsearch"
-    "github.com/Zeronetsec/Comet/utils/invinput"
+    "github.com/Senzdetta/Comet/module/hostsearch"
+    "github.com/Senzdetta/Comet/utils/invinput"
 )
 
 type HostSearch struct{}
@@ -58,4 +58,4 @@ func (c HostSearch) Execute(args []string) {
     )
 }
 
-// Copyright (c) 2026 Zeronetsec
+// Copyright (c) 2026 Senzdetta

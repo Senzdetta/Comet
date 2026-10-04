@@ -1,12 +1,12 @@
-// https://github.com/Zeronetsec/Comet
+// https://github.com/Senzdetta/Comet
 
 package console
 
 import (
     "time"
     "fmt"
-    "github.com/Zeronetsec/Comet/utils/cursor"
-    "github.com/Zeronetsec/Comet/module/uwu"
+    "github.com/Senzdetta/Comet/utils/cursor"
+    "github.com/Senzdetta/Comet/module/uwu"
 )
 
 type Uwu struct{}
@@ -18,4 +18,4 @@ func (c Uwu) Execute(args []string) {
     fmt.Println()
 }
 
-// Copyright (c) 2026 Zeronetsec
+// Copyright (c) 2026 Senzdetta

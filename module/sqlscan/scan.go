@@ -1,4 +1,4 @@
-// https://github.com/Zeronetsec/Comet
+// https://github.com/Senzdetta/Comet
 
 package sqlscan
 
@@ -10,8 +10,8 @@ import (
     "time"
     "io/fs"
     "net/http"
-    "github.com/Zeronetsec/Comet/utils/color"
-    "github.com/Zeronetsec/Comet/utils/logger"
+    "github.com/Senzdetta/Comet/utils/color"
+    "github.com/Senzdetta/Comet/utils/logger"
 )
 
 func Scan(
@@ -123,7 +123,7 @@ func Scan(
 
                 req.Header.Set(
                     "User-Agent",
-                    "https://github.com/Zeronetsec/Comet",
+                    "https://github.com/Senzdetta/Comet",
                 )
 
                 resp, err := client.Do(req)
@@ -186,4 +186,4 @@ func Scan(
     }
 }
 
-// Copyright (c) 2026 Zeronetsec
+// Copyright (c) 2026 Senzdetta

@@ -1,12 +1,12 @@
-// https://github.com/Zeronetsec/Comet
+// https://github.com/Senzdetta/Comet
 
 package osint
 
 import (
     "fmt"
     "sort"
-    "github.com/Zeronetsec/Comet/utils/color"
-    "github.com/Zeronetsec/Comet/utils/logger"
+    "github.com/Senzdetta/Comet/utils/color"
+    "github.com/Senzdetta/Comet/utils/logger"
 )
 
 func summary(results map[int][]string) {
@@ -55,4 +55,4 @@ func summary(results map[int][]string) {
     )
 }
 
-// Copyright (c) 2026 Zeronetsec
+// Copyright (c) 2026 Senzdetta

@@ -1,4 +1,4 @@
-// https://github.com/Zeronetsec/Comet
+// https://github.com/Senzdetta/Comet
 
 package dnslookup
 
@@ -9,8 +9,8 @@ import (
     "strings"
     "time"
     "net/http"
-    "github.com/Zeronetsec/Comet/utils/color"
-    "github.com/Zeronetsec/Comet/utils/logger"
+    "github.com/Senzdetta/Comet/utils/color"
+    "github.com/Senzdetta/Comet/utils/logger"
 )
 
 func Scan(domain string, timeout int, retries int) {
@@ -50,7 +50,7 @@ func Scan(domain string, timeout int, retries int) {
         req, _ := http.NewRequest("GET", url, nil)
         req.Header.Set(
             "User-Agent",
-            "https://github.com/Zeronetsec/Comet",
+            "https://github.com/Senzdetta/Comet",
         )
 
         resp, err = client.Do(req)
@@ -146,4 +146,4 @@ func Scan(domain string, timeout int, retries int) {
     }
 }
 
-// Copyright (c) 2026 Zeronetsec
+// Copyright (c) 2026 Senzdetta

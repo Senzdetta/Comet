@@ -1,4 +1,4 @@
-// https://github.com/Zeronetsec/Comet
+// https://github.com/Senzdetta/Comet
 
 package logger
 
@@ -7,7 +7,7 @@ import (
     "os"
     "time"
     "path/filepath"
-    "github.com/Zeronetsec/Comet/utils/color"
+    "github.com/Senzdetta/Comet/utils/color"
 )
 
 func (l *Logger) Log(tag string, message string) error {
@@ -61,4 +61,4 @@ func (l *Logger) Log(tag string, message string) error {
     return err
 }
 
-// Copyright (c) 2026 Zeronetsec
+// Copyright (c) 2026 Senzdetta

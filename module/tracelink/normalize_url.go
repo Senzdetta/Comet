@@ -1,4 +1,4 @@
-// https://github.com/Zeronetsec/Comet
+// https://github.com/Senzdetta/Comet
 
 package tracelink
 
@@ -32,4 +32,4 @@ func normalizeURL(base, href string) string {
     return baseURL.ResolveReference(u).String()
 }
 
-// Copyright (c) 2026 Zeronetsec
+// Copyright (c) 2026 Senzdetta

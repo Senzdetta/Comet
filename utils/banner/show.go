@@ -1,11 +1,11 @@
-// https://github.com/Zeronetsec/Comet
+// https://github.com/Senzdetta/Comet
 
 package banner
 
 import (
     "embed"
     "fmt"
-    "github.com/Zeronetsec/Comet/utils/color"
+    "github.com/Senzdetta/Comet/utils/color"
 )
 
 //go:embed ascii/*.txt
@@ -27,4 +27,4 @@ func Show() {
     )
 }
 
-// Copyright (c) 2026 Zeronetsec
+// Copyright (c) 2026 Senzdetta

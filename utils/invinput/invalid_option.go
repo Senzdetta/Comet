@@ -1,10 +1,10 @@
-// https://github.com/Zeronetsec/Comet
+// https://github.com/Senzdetta/Comet
 
 package invinput
 
 import (
     "fmt"
-    "github.com/Zeronetsec/Comet/utils/color"
+    "github.com/Senzdetta/Comet/utils/color"
 )
 
 func InvalidOption(input string) {
@@ -19,4 +19,4 @@ func InvalidOption(input string) {
     )
 }
 
-// Copyright (c) 2026 Zeronetsec
+// Copyright (c) 2026 Senzdetta

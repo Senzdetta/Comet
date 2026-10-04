@@ -1,4 +1,4 @@
-// https://github.com/Zeronetsec/Comet
+// https://github.com/Senzdetta/Comet
 
 package subtakeover
 
@@ -19,4 +19,4 @@ var Fingerprints = map[string]string{
     "Kinsta": "No Site For Domain",
 }
 
-// Copyright (c) 2026 Zeronetsec
+// Copyright (c) 2026 Senzdetta

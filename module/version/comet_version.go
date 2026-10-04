@@ -1,17 +1,17 @@
-// https://github.com/Zeronetsec/Comet
+// https://github.com/Senzdetta/Comet
 
 package version
 
 import (
     "fmt"
-    "github.com/Zeronetsec/Comet/utils/color"
+    "github.com/Senzdetta/Comet/utils/color"
 )
 
 const (
     name = "Comet"
     version = "v0.1.04102026"
-    creator = "Zeronetsec"
-    homepage = "https://github.com/Zeronetsec/Comet"
+    creator = "Senzdetta"
+    homepage = "https://github.com/Senzdetta/Comet"
 )
 
 func CometVersion() {
@@ -36,4 +36,4 @@ func CometVersion() {
     )
 }
 
-// Copyright (c) 2026 Zeronetsec
+// Copyright (c) 2026 Senzdetta

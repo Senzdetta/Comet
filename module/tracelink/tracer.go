@@ -1,11 +1,11 @@
-// https://github.com/Zeronetsec/Comet
+// https://github.com/Senzdetta/Comet
 
 package tracelink
 
 import (
     "sync"
     "fmt"
-    "github.com/Zeronetsec/Comet/utils/color"
+    "github.com/Senzdetta/Comet/utils/color"
 )
 
 func Tracer(
@@ -95,4 +95,4 @@ func Tracer(
     summary(results)
 }
 
-// Copyright (c) 2026 Zeronetsec
+// Copyright (c) 2026 Senzdetta

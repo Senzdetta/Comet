@@ -1,4 +1,4 @@
-// https://github.com/Zeronetsec/Comet
+// https://github.com/Senzdetta/Comet
 
 package dirfuzzer
 
@@ -10,7 +10,7 @@ import (
     "time"
     "io/fs"
     "net/http"
-    "github.com/Zeronetsec/Comet/utils/color"
+    "github.com/Senzdetta/Comet/utils/color"
 )
 
 func ExecFuzzing(
@@ -144,4 +144,4 @@ func ExecFuzzing(
     summary(results)
 }
 
-// Copyright (c) 2026 Zeronetsec
+// Copyright (c) 2026 Senzdetta

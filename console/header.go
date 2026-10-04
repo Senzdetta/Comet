@@ -1,4 +1,4 @@
-// https://github.com/Zeronetsec/Comet
+// https://github.com/Senzdetta/Comet
 
 package console
 
@@ -7,9 +7,9 @@ import (
     "os"
     "strconv"
     "time"
-    "github.com/Zeronetsec/Comet/utils/color"
-    "github.com/Zeronetsec/Comet/utils/invinput"
-    "github.com/Zeronetsec/Comet/module/header"
+    "github.com/Senzdetta/Comet/utils/color"
+    "github.com/Senzdetta/Comet/utils/invinput"
+    "github.com/Senzdetta/Comet/module/header"
 )
 
 type Header struct{}
@@ -58,4 +58,4 @@ func (c Header) Execute(args []string) {
     header.Inspect(targetURL, timeoutSec, followRedirect)
 }
 
-// Copyright (c) 2026 Zeronetsec
+// Copyright (c) 2026 Senzdetta

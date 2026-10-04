@@ -1,12 +1,12 @@
-// https://github.com/Zeronetsec/Comet
+// https://github.com/Senzdetta/Comet
 
 package console
 
 import (
     "os"
     "strconv"
-    "github.com/Zeronetsec/Comet/module/sqlscan"
-    "github.com/Zeronetsec/Comet/utils/invinput"
+    "github.com/Senzdetta/Comet/module/sqlscan"
+    "github.com/Senzdetta/Comet/utils/invinput"
 )
 
 type Sqlscan struct{}
@@ -66,4 +66,4 @@ func (c Sqlscan) Execute(args []string) {
     )
 }
 
-// Copyright (c) 2026 Zeronetsec
+// Copyright (c) 2026 Senzdetta

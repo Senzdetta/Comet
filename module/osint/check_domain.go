@@ -1,4 +1,4 @@
-// https://github.com/Zeronetsec/Comet
+// https://github.com/Senzdetta/Comet
 
 package osint
 
@@ -6,7 +6,7 @@ import (
     "fmt"
     "strings"
     "net/http"
-    "github.com/Zeronetsec/Comet/utils/color"
+    "github.com/Senzdetta/Comet/utils/color"
 )
 
 func checkDomain(
@@ -29,7 +29,7 @@ func checkDomain(
         req, _ := http.NewRequest("GET", url, nil)
         req.Header.Set(
             "User-Agent",
-            "https://github.com/Zeronetsec/Comet",
+            "https://github.com/Senzdetta/Comet",
         )
 
         resp, err := client.Do(req)
@@ -51,4 +51,4 @@ func checkDomain(
     return "", 0, false
 }
 
-// Copyright (c) 2026 Zeronetsec
+// Copyright (c) 2026 Senzdetta
