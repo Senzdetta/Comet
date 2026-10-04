@@ -1,5 +1,3 @@
-<!-- https://github.com/Zeronetsec/Comet -->
-
 # Installation
 `install.sh` optional options (can be used together):
 - `--home=<path>`
@@ -25,5 +23,3 @@ bash Comet/install.sh <option>
 export prefix="${PREFIX:-/usr}"
 bash $prefix/opt/comet/uninstall.sh <option>
 ```
-
-<!-- Copyright (c) 2026 Zeronetsec -->

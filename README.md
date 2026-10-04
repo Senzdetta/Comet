@@ -1,5 +1,3 @@
-<!-- https://github.com/Zeronetsec/Comet -->
-
 <div align="center">
     <img src="https://img.shields.io/badge/Comet-Version%200.1-blue?style=square&logo=go&v=1" />
     <img src="https://img.shields.io/badge/Supported%20OS-Linux-blue?style=square&logo=linux&v=1" />
@@ -44,5 +42,3 @@ And more commands.
 ## Credits
 This project incorporates components from third-party sources. </br>
 Please refer to [.docs/credits.md](.docs/credits.md) for full details and licensing information.
-
-<!-- Copyright (c) 2026 Zeronetsec -->

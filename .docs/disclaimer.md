@@ -1,5 +1,3 @@
-<!-- https://github.com/Zeronetsec/Comet -->
-
 # DISCLAIMER
 ## **Version 0.1 (Experimental Status)**
 This tool is currently in its early **v0.1** stage and is considered **unstable**. </br>
@@ -25,5 +23,3 @@ This tool is distributed **as is**, without any warranties or guarantees of any 
 
 Users are solely responsible for their actions and any consequences that may result from using this tool. </br>
 If you do not agree with these terms, you must not use this software.
-
-<!-- Copyright (c) 2026 Zeronetsec -->
