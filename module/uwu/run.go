@@ -7,7 +7,7 @@ import (
     "time"
 )
 
-func Nyan() {
+func Run() {
     faces := []string{
         "(｡◕‿◕｡)",
         "(≧◡≦)",
@@ -19,9 +19,11 @@ func Nyan() {
     }
 
     fixface := "(・ω・)"
+
     delay := 200 * time.Millisecond
     end := time.After(5 * time.Second)
-    nyaa := 0
+
+    idx := 0
 
     fmt.Print("\x1b[?25l")
     for {
@@ -35,10 +37,10 @@ func Nyan() {
             default:
                 fmt.Printf(
                     "\r%s\x1b[K",
-                    faces[nyaa%len(faces)],
+                    faces[idx%len(faces)],
                 )
             time.Sleep(delay)
-            nyaa++
+            idx++
         }
     }
 }
