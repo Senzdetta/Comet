@@ -8,11 +8,11 @@ import (
     "github.com/Senzdetta/Comet/utils/color"
 )
 
-//go:embed ascii/*.txt
+//go:embed banner.txt
 var asciiFS embed.FS
 
 func Show() {
-    data, err := asciiFS.ReadFile("ascii/comet_devil.txt")
+    data, err := asciiFS.ReadFile("banner.txt")
     if err != nil {
         fmt.Printf(
             "%s[!] %sError loading banner!\n",

@@ -10,7 +10,10 @@ function install::installer() {
         install::getinstall \
             "
                 command go mod tidy
-                command go build -o ${targetins}
+                command go build \
+                    -ldflags='-s -w' \
+                    -trimpath \
+                    -o ${targetins}
             " \
             "Compiling: ${color_GG}${targetins}${color_N}"
     )
