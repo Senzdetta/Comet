@@ -4,6 +4,7 @@
 This tool is currently in its early **v0.1** stage and is considered **unstable**. </br>
 You may encounter bugs, system errors, or unexpected behavior. </br>
 Additionally, core structures, commands, and language configurations are highly subject to change in future updates.
+
 ## Legal Disclaimer
 This software is provided for educational and authorized security research purposes only. </br>
 By using this tool, you agree that you will use it **only on systems, networks, and targets that you own or have explicit permission to test.** </br>
