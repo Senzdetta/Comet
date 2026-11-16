@@ -10,6 +10,7 @@ checkout: {
 
     'ruby/moregen' -> '.action/moregen.rb'
     'ruby/vergen' -> '.action/vergen.rb'
+    'ruby/readmegen' -> '.action/readmegen.rb'
 }
 
 execute: {
@@ -24,4 +25,5 @@ execute: {
 
     'moregen.rb'
     'vergen.rb'
+    'readmegen.rb'
 }

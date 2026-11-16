@@ -43,4 +43,4 @@ And more commands.
 ## More
 For further information, visit: [more](.docs/__more__.md)
 
-<code>Made with ❤ ~love.</code>
+<code>Made with ❤ ~love</code>
