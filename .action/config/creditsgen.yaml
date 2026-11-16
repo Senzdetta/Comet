@@ -52,7 +52,7 @@ sources:
       - module: Portscan
         type: service names
         path: module/portscan/services/nmap-services.txt
-        license: NPSL v0.95
+        license: NPSL
         license_file: module/portscan/services/LICENSE
         readme_file: module/portscan/services/README.md
         modified_info: module/portscan/services/modified_info.md

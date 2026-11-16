@@ -31,7 +31,7 @@
       <b><a href="https://github.com/nmap/nmap">nmap/nmap</a></b></br></br>
       <b>Portscan</b> · service names</br>
       <code>module/portscan/services/nmap-services.txt</code></br>
-      <a href="../module/portscan/services/LICENSE">NPSL v0.95</a> · <a href="../module/portscan/services/README.md">README</a> · <a href="../module/portscan/services/modified_info.md">Modified</a>
+      <a href="../module/portscan/services/LICENSE">NPSL</a> · <a href="../module/portscan/services/README.md">README</a> · <a href="../module/portscan/services/modified_info.md">Modified</a>
     </td>
   </tr>
 </table>
