@@ -1,5 +1,5 @@
 checkout: {
-    'ruby/vergen' -> '.action/1vergen.rb'
+    'ruby/vergen' -> '.action/vergen.rb'
     'ruby/gitignore' -> '.action/gitignore.rb'
     'ruby/gitattributes' -> '.action/gitattributes.rb'
     'ruby/iugen' -> '.action/iugen.rb'
