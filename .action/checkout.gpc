@@ -2,6 +2,7 @@ checkout: {
     'ruby/gitignore' -> '.action/gitignore.rb'
     'ruby/gitattributes' -> '.action/gitattributes.rb'
     'ruby/whymd' -> '.action/whymd.rb'
+    'ruby/disclaimergen' -> '.action/disclaimergen.rb'
     'ruby/vergen' -> '.action/vergen.rb'
 
     'ruby/creditsgen' -> '.action/creditsgen.rb'
