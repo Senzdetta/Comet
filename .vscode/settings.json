@@ -6,6 +6,7 @@
     "editor.renderWhitespace": "all",
     "editor.occurrencesHighlight": "off",
     "editor.selectionHighlight": false,
+    "editor.bracketPairColorization.enabled": false,
 
     "files.insertFinalNewline": false,
     "files.trimFinalNewlines": false,
