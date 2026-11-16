@@ -1,11 +1,11 @@
 # Comet
-Comet is a lightweight CLI tool built for high-efficiency security reconnaissance.
+Comet is a lightweight, high-performance CLI tool built for efficient reconnaissance and vulnerability scanning.
 
 ## Features
-- Massive username enumeration across 700+ domains.
-- High-performance directory fuzzing.
+- TCP, UDP, and SCTP port scanner.
 - HTML link crawling (hyperlink extraction).
-- Parameter discovery via Wayback Machine.
+- Massive username searches across various social media platforms.
+- DNS bruteforcing, SQLi scanner and fuzzing.
 - And more features.
 
 ## Disclaimer
@@ -34,4 +34,4 @@ And more commands.
 ## More
 For further information, visit: [more](.docs/__more__.md)
 
-<code>Made by ❤~love</code>
+<code>Made with ❤~love</code>

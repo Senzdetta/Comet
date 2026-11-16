@@ -1,6 +1,6 @@
 # INSTALL
 
-### install.sh
+## Installation
 Usage:
 ```bash
 git clone https://github.com/Senzdetta/Comet
@@ -11,12 +11,4 @@ bash Comet/install.sh # <options...>
 ```text
 * --home
 └── override $HOME value.
-```
-
-### go install
-Usage:
-```bash
-go install github.com/Senzdetta/Comet@latest
-# optional:
-# ln -sfv "$(go env GOPATH)/bin/Comet" ${PREFIX:-/usr}/bin/comet
 ```
