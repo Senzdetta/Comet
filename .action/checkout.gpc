@@ -3,6 +3,7 @@ checkout: {
     'ruby/gitattributes' -> '.action/gitattributes.rb'
     'ruby/whymd' -> '.action/whymd.rb'
     'ruby/disclaimergen' -> '.action/disclaimergen.rb'
+    'ruby/moregen' -> '.action/moregen.rb'
     'ruby/vergen' -> '.action/vergen.rb'
 
     'ruby/creditsgen' -> '.action/creditsgen.rb'
