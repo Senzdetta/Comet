@@ -1,12 +1,3 @@
-artist
-cat
-pic
-test
-file
-aid
-pp
-
-
 1
 11
 12

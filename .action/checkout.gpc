@@ -5,4 +5,5 @@ checkout: {
     'ruby/version_generator' -> '.action/version_generator.rb'
 
     'ruby/credits_generator' -> '.action/credits_generator.rb'
+    'ruby/srmdup' -> '.action/srmdup.rb'
 }

@@ -1,0 +1,14 @@
+- Target:
+    - module/paramscan/wordlist/
+    - module/pathfuzzer/wordlist/
+    - module/sqlscan/payload/
+    - module/subdomain/wordlist/
+    - module/subtakeover/wordlist/
+    - module/userhunt/sites/
+  type: folder
+  recursive: true
+  only: ["*.txt"]
+  sort: true
+  remove_duplicat: true
+  remove_comment: true
+  remove_empty_line: true
