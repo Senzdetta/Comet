@@ -26,4 +26,5 @@ execute: {
     'moregen.rb'
     'vergen.rb'
     'readmegen.rb'
+    'vergen.rb'
 }
