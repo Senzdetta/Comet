@@ -1,4 +1,4 @@
-# Why?
+# WHY
 
 ### A Small Personal Note
 If you’ve landed on this page, you’ve probably noticed that the **Issues** and **Pull Requests (PRs)** features on this repository are intentionally disabled. </br>
