@@ -12,7 +12,7 @@ checkout: {
 }
 
 execute: {
-    'vergen.rb'
+//    'vergen.rb'
     'gitignore.rb'
     'gitattributes.rb'
     'iugen.rb'
