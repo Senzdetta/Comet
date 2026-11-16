@@ -1,11 +1,3 @@
-<div align="center">
-    <img src="https://img.shields.io/badge/Comet-Version%200.1-blue?style=square&logo=go&v=1" />
-    <img src="https://img.shields.io/badge/Supported%20OS-Linux-blue?style=square&logo=linux&v=1" />
-    <a href="LICENSE">
-        <img src="https://img.shields.io/badge/License-GPL--3.0-blue?style=square&logo=github&v=1" />
-    </a>
-</div>
-
 # Comet
 Comet is a lightweight CLI tool built for high-efficiency security reconnaissance.
 
@@ -17,7 +9,7 @@ Comet is a lightweight CLI tool built for high-efficiency security reconnaissanc
 - And more features.
 
 ## Disclaimer
-Please read [.docs/disclaimer.md](.docs/disclaimer.md) before using this tool. </br>
+Please read [disclaimer](.docs/disclaimer.md) before using this tool. </br>
 Use this software at your own risk. </br>
 The author is not responsible for any damage, data loss, or issues that may result from its use.
 
@@ -27,18 +19,19 @@ Quick install:
 git clone https://github.com/Senzdetta/Comet
 bash Comet/install.sh
 ```
-For more detailed installation and uninstallation instructions, see [.docs/install_and_uninstall.md](.docs/install_and_uninstall.md).
+For more detailed installation instructions, see [install](.docs/install.md).
 
 ## Usage Example
 ```bash
-comet --dirfuzzer http://192.168.1.1/
-comet --header http://192.168.1.1 --redirect true
-comet --tracelink https://google.com --recursive
-comet --dnslookup google.com
-comet --paramscan http://testphp.vulnweb.com
+comet --portscan 127.0.0.1 --protocol tcp,udp,sctp --only open
+comet --pathfuzzer http://192.168.1.1/ --recursive
+comet --corsscan http://192.168.1.1 --origin http://evil.com
+comet --dnslookup google.com --dnsresolv 8.8.8.8:53
+comet --userhunt someone --threads 10 --timeout 50 --check-body true
 ```
 And more commands.
 
-## Credits
-This project incorporates components from third-party sources. </br>
-Please refer to [.docs/credits.md](.docs/credits.md) for full details and licensing information.
+## More
+For further information, visit: [more](.docs/__more__.md)
+
+<code>Made by ❤~love</code>
