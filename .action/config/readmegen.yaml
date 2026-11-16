@@ -1,0 +1,32 @@
+output: README.md
+project: Comet
+version: "v0.1.20261117"
+language: go
+platform: linux
+license: AGPL-3.0
+description: "Comet is a lightweight, high-performance CLI tool built for efficient reconnaissance and vulnerability scanning."
+
+- features:
+  items:
+    - "Multi-protocol port scanner (TCP, UDP, SCTP)."
+    - "HTML link crawling (hyperlink extraction)."
+    - "Username enumeration across social media platforms."
+    - "CORS misconfiguration and subdomain takeover scanner."
+    - "DNS bruteforcing, SQLi scanning, and fuzzing."
+
+- disclaimer:
+  - docpath: .docs/disclaimer.md
+
+- installation:
+  - docpath: .docs/install.md
+
+- usage_example:
+  items:
+    - "--portscan 127.0.0.1 --protocol tcp,udp,sctp --only open"
+    - "--pathfuzzer http://192.168.1.1/ --recursive"
+    - "--corsscan http://192.168.1.1 --origin http://evil.com"
+    - "--dnslookup google.com --dnsresolv 8.8.8.8:53"
+    - "--userhunt someone --threads 10 --timeout 50 --check-body true"
+
+- more:
+  - docpath: .docs/__more__.md

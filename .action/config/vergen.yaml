@@ -1,3 +1,7 @@
 - File: module/version/execute.go
   replace: "version = "
   new: '"{newstr}"'
+
+- File: .action/config/readmegen.yaml
+  replace: "version: "
+  new: '"{newstr}"'

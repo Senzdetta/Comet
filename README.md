@@ -1,11 +1,20 @@
+<div align="center">
+    <img src="https://img.shields.io/badge/Comet-v0.1.20261117-blue?style=square&logo=go&v=1" />
+    <img src="https://img.shields.io/badge/Platform-Linux-blue?style=square&logo=linux&v=1" />
+    <a href="LICENSE">
+        <img src="https://img.shields.io/badge/License-AGPL--3.0-blue?style=square&logo=github&v=1" />
+    </a>
+</div>
+
 # Comet
 Comet is a lightweight, high-performance CLI tool built for efficient reconnaissance and vulnerability scanning.
 
 ## Features
-- TCP, UDP, and SCTP port scanner.
+- Multi-protocol port scanner (TCP, UDP, SCTP).
 - HTML link crawling (hyperlink extraction).
-- Massive username searches across various social media platforms.
-- DNS bruteforcing, SQLi scanner and fuzzing.
+- Username enumeration across social media platforms.
+- CORS misconfiguration and subdomain takeover scanner.
+- DNS bruteforcing, SQLi scanning, and fuzzing.
 - And more features.
 
 ## Disclaimer
