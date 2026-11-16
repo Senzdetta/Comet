@@ -5,7 +5,7 @@ checkout: {
     'ruby/disclaimergen' -> '.action/disclaimergen.rb'
     'ruby/moregen' -> '.action/moregen.rb'
     'ruby/iugen' -> '.action/iugen.rb'
-    'ruby/vergen' -> '.action/vergen.rb'
+    'ruby/vergen' -> '.action/1_vergen.rb'
 
     'ruby/creditsgen' -> '.action/creditsgen.rb'
     'ruby/srmdup' -> '.action/srmdup.rb'
