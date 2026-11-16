@@ -1,6 +1,7 @@
 checkout: {
     'ruby/gitignore_generator' -> '.action/gitignore_generator.rb'
     'ruby/gitattributes_generator' -> '.action/gitattributes_generator.rb'
+    'ruby/whymd_generator' -> '.action/whymd_generator.rb'
 
     'ruby/credits_generator' -> '.action/credits_generator.rb'
 }
