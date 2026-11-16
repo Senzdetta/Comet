@@ -8,7 +8,7 @@ import (
 
 type Version struct{}
 func (c Version) Execute(args []string) {
-    version.CometVersion()
+    version.Execute()
 }
 
 // Copyright (c) 2026 Senzdetta

@@ -1,0 +1,5 @@
+{
+    "Command": "--portscan",
+    "Args": "<host> [<start_port>:<end_port>] [--protocol <tcp,udp,sctp>] [--threads <value>] [--timeout <value>] [--only <open,filtered,close>] [--skip-host-check] [--service <file>]",
+    "Description": "scan tcp/udp/sctp ports on a host and classify their states"
+}

@@ -17,9 +17,9 @@ func (c Sqlscan) Execute(args []string) {
     }
 
     targetURL := ""
-    wordlist := "embedded"
+    wordlist := ""
     threads := 100
-    timeout := 15
+    timeout := 10
 
     for i := 2; i < len(args); i++ {
         switch args[i] {
@@ -45,9 +45,8 @@ func (c Sqlscan) Execute(args []string) {
                     i++
                 }
             default:
-                if (targetURL == "" &&
-                    args[i][0] != '-') {
-                        targetURL = args[i]
+                if targetURL == "" && args[i][0] != '-' {
+                    targetURL = args[i]
                 }
         }
     }
@@ -57,10 +56,9 @@ func (c Sqlscan) Execute(args []string) {
         os.Exit(1)
     }
 
-    sqlscan.Scan(
+    sqlscan.Execute(
         targetURL,
         wordlist,
-        WordlistFS,
         threads,
         timeout,
     )

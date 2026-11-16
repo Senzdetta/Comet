@@ -1,2 +1,9 @@
-.vscode/
-.devphase/
+/.privdat/
+/.devphase/
+/.deprecated/
+/.legacy/
+
+__pycache__/
+
+*.pyc
+.nomedia

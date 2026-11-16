@@ -7,9 +7,9 @@ import (
     "os"
     "strconv"
     "time"
+    "github.com/Senzdetta/Comet/module/header"
     "github.com/Senzdetta/Comet/utils/color"
     "github.com/Senzdetta/Comet/utils/invinput"
-    "github.com/Senzdetta/Comet/module/header"
 )
 
 type Header struct{}
@@ -20,7 +20,7 @@ func (c Header) Execute(args []string) {
     }
 
     targetURL := args[2]
-    timeoutSec := 5 * time.Second
+    timeoutSec := 10 * time.Second
     followRedirect := false
 
     for i := 3; i < len(args); i++ {
@@ -55,7 +55,11 @@ func (c Header) Execute(args []string) {
         }
     }
 
-    header.Inspect(targetURL, timeoutSec, followRedirect)
+    header.Execute(
+        targetURL,
+        timeoutSec,
+        followRedirect,
+    )
 }
 
 // Copyright (c) 2026 Senzdetta

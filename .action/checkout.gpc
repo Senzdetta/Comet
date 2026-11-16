@@ -1,0 +1,3 @@
+checkout: {
+    'ruby/credits_generator' -> '.action/credits_generator.rb'
+}

@@ -9,8 +9,8 @@ import (
     "github.com/Senzdetta/Comet/utils/invinput"
 )
 
-type CorsScan struct{}
-func (c CorsScan) Execute(args []string) {
+type Corsscan struct{}
+func (c Corsscan) Execute(args []string) {
     if len(args) < 3 {
         invinput.MissingArgument()
         os.Exit(1)
@@ -51,9 +51,8 @@ func (c CorsScan) Execute(args []string) {
                     i++
                 }
             default:
-                if (target == "" &&
-                    args[i][0] != '-') {
-                        target = args[i]
+                if target == "" && args[i][0] != '-' {
+                    target = args[i]
                 }
         }
     }
@@ -63,7 +62,7 @@ func (c CorsScan) Execute(args []string) {
         os.Exit(1)
     }
 
-    corsscan.Scan(
+    corsscan.Execute(
         target,
         origin,
         customHeader,

@@ -1,0 +1,5 @@
+{
+    "Command": "--userhunt",
+    "Args": "<username> [--threads <value>] [--timeout <value>] [--check-body <true|false>] [--site <file>]",
+    "Description": "hunt username across social platforms"
+}

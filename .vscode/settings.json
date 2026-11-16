@@ -1,0 +1,22 @@
+{
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+    "editor.formatOnSave": false,
+    "editor.renderWhitespace": "all",
+    "editor.occurrencesHighlight": "off",
+    "editor.selectionHighlight": false,
+
+    "files.insertFinalNewline": false,
+    "files.trimFinalNewlines": false,
+
+    "[go]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4,
+        "editor.formatOnSave": false
+    },
+
+    "[yaml]": {
+        "editor.tabSize": 2
+    }
+}

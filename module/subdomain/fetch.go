@@ -4,22 +4,23 @@ package subdomain
 
 import (
     "fmt"
+    "net"
     "strings"
     "time"
-    "net"
-    "sort"
     "net/http"
     "encoding/json"
+    "github.com/Senzdetta/Comet/utils/color"
+    "github.com/Senzdetta/Comet/utils/pcat"
 )
 
-func Fetch(
+func fetch(
     domain string,
+    apiPattern string,
     timeout int,
     retries int,
 ) ([]string, error) {
-    url := fmt.Sprintf(
-        "https://crt.sh/?q=%%.%s&output=json",
-        domain,
+    apiURL := strings.ReplaceAll(
+        apiPattern, "{target}", domain,
     )
 
     client := &http.Client{
@@ -40,10 +41,14 @@ func Fetch(
     var err error
 
     for i := 0; i < retries; i++ {
-        req, _ := http.NewRequest(
-            "GET", url, nil,
+        pcat.Printf(
+            "%s[!] %sUnable to connect to API, retrying %s(%s%d%s/%s%d%s)%s",
+            color.R, color.N,
+            color.DG, color.GG, i+1, color.DG,
+            color.GG, retries, color.DG, color.N,
         )
 
+        req, _ := http.NewRequest("GET", apiURL, nil)
         req.Header.Set(
             "User-Agent",
             "https://github.com/Senzdetta/Comet",
@@ -60,6 +65,8 @@ func Fetch(
 
         time.Sleep(time.Duration(i+2) * time.Second)
     }
+
+    fmt.Printf("\r\x1b[K")
 
     if err != nil || resp == nil {
         return nil, fmt.Errorf(
@@ -98,7 +105,6 @@ func Fetch(
     for sub := range uniqueSubs {
         sortedSubs = append(sortedSubs, sub)
     }
-    sort.Strings(sortedSubs)
 
     return sortedSubs, nil
 }

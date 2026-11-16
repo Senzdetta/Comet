@@ -1,0 +1,5 @@
+{
+    "Command": "--subdomain",
+    "Args": "<domain> [--threads <value>] [--timeout <value>] [--mode <native|api> [--api <api>] [--retry <value>] [--lookup-ip <true|false>]] [--wordlist <file>] [--dnsresolv <dns>:[<port>]]",
+    "Description": "enumerate subdomains to expand the target's attack surface"
+}

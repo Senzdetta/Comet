@@ -9,15 +9,16 @@ import (
     "github.com/Senzdetta/Comet/utils/invinput"
 )
 
-type HostSearch struct{}
-func (c HostSearch) Execute(args []string) {
+type Hostsearch struct{}
+func (c Hostsearch) Execute(args []string) {
     if len(args) < 3 {
         invinput.MissingArgument()
         os.Exit(1)
     }
 
-    timeout := 30
+    timeout := 10
     retries := 5
+    apiURL := "https://api.hackertarget.com/hostsearch/?q="
     targetDomain := ""
 
     for i := 2; i < len(args); i++ {
@@ -38,10 +39,14 @@ func (c HostSearch) Execute(args []string) {
                     }
                     i++
                 }
+            case "--api":
+                if i+1 < len(args) {
+                    apiURL = args[i+1]
+                    i++
+                }
             default:
-                if (targetDomain == "" &&
-                    args[i][0] != '-') {
-                        targetDomain = args[i]
+                if targetDomain == "" && args[i][0] != '-' {
+                    targetDomain = args[i]
                 }
         }
     }
@@ -51,8 +56,9 @@ func (c HostSearch) Execute(args []string) {
         os.Exit(1)
     }
 
-    hostsearch.Scan(
+    hostsearch.Execute(
         targetDomain,
+        apiURL,
         timeout,
         retries,
     )

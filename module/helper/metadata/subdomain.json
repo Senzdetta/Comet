@@ -1,5 +1,0 @@
-{
-    "Command": "--subdomain",
-    "Args": "<domain> [--timeout <value>] [--retry <value>]",
-    "Description": "enumerate subdomains to expand the target's attack surface"
-}

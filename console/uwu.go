@@ -8,7 +8,7 @@ import (
 
 type Uwu struct{}
 func (c Uwu) Execute(args []string) {
-    uwu.Run()
+    uwu.Execute()
 }
 
 // Copyright (c) 2026 Senzdetta

@@ -1,0 +1,70 @@
+title: CREDITS
+
+sources:
+  - name: danielmiessler/SecLists
+    url: https://github.com/danielmiessler/SecLists
+    avatar: https://avatars.githubusercontent.com/u/50654?v=4
+    items:
+      - module: Paramscan
+        type: parameter wordlist
+        path: module/paramscan/wordlist/seclists/burp-parameter-names.txt
+        license: MIT
+        license_file: module/paramscan/wordlist/seclists/LICENSE
+        readme_file: module/paramscan/wordlist/seclists/README.md
+        modified_info: module/paramscan/wordlist/seclists/modified_info.md
+
+      - module: Sqlscan
+        type: payloads
+        path: "module/sqlscan/payload/seclists/*"
+        license: MIT
+        license_file: module/sqlscan/payload/seclists/LICENSE
+        readme_file: module/sqlscan/payload/seclists/README.md
+        modified_info: module/sqlscan/payload/seclists/modified_info.md
+
+      - module: Subdomain
+        type: wordlist
+        path: module/subdomain/wordlist/subdomains-top1million-20000.txt
+        license: MIT
+        license_file: module/subdomain/wordlist/LICENSE
+        readme_file: module/subdomain/wordlist/README.md
+        modified_info: module/subdomain/wordlist/modified_info.md
+
+      - module: Subtakeover
+        type: subdomain wordlist
+        path: module/subtakeover/wordlist/seclists/subdomains-top1million-20000.txt
+        license: MIT
+        license_file: module/subtakeover/wordlist/seclists/LICENSE
+        readme_file: module/subtakeover/wordlist/seclists/README.md
+        modified_info: module/subtakeover/wordlist/seclists/modified_info.md
+
+      - module: Pathfuzzer
+        type: wordlist
+        path: module/pathfuzzer/wordlist/filedirs.txt
+        license: MIT
+        license_file: module/pathfuzzer/wordlist/LICENSE
+        readme_file: module/pathfuzzer/wordlist/README.md
+        modified_info: module/pathfuzzer/wordlist/modified_info.md
+
+  - name: nmap/nmap
+    url: https://github.com/nmap/nmap
+    avatar: https://avatars.githubusercontent.com/u/63385?v=4
+    items:
+      - module: Portscan
+        type: service names
+        path: module/portscan/services/nmap-services.txt
+        license: NPSL v0.95
+        license_file: module/portscan/services/LICENSE
+        readme_file: module/portscan/services/README.md
+        modified_info: module/portscan/services/modified_info.md
+
+  - name: payload-box/sql-injection-payload-list
+    url: https://github.com/payload-box/sql-injection-payload-list
+    avatar: https://avatars.githubusercontent.com/u/252421992?v=4
+    items:
+      - module: Sqlscan
+        type: payloads (PayloadBox)
+        path: "module/sqlscan/payload/payloadbox/*"
+        license: MIT
+        license_file: module/sqlscan/payload/payloadbox/LICENSE
+        readme_file: module/sqlscan/payload/payloadbox/README.md
+        modified_info: module/sqlscan/payload/payloadbox/modified_info.md

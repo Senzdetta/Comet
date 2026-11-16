@@ -1,0 +1,5 @@
+{
+    "Command": "--dnslookup",
+    "Args": "<host> [--threads <value>] [--timeout <value>] [--dnsresolv <dns>:[<port>]] [--mode <native|api> [--api <api>] [--retry <value>]]",
+    "Description": "perform dns lookup to retrieve domain records and ip mapping"
+}

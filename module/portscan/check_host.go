@@ -19,7 +19,9 @@ func checkHost(ip string) bool {
     for _, port := range ports {
         address := fmt.Sprintf("%s:%d", ip, port)
         conn, err := net.DialTimeout(
-            "tcp", address, 300*time.Millisecond,
+            "tcp",
+            address,
+            300 * time.Millisecond,
         )
 
         if err == nil {

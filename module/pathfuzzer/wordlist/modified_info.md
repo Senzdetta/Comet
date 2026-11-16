@@ -1,0 +1,2 @@
+This is a combination of common.txt, raft-medium-directories.txt, and raft-medium-files.txt, with some additions.
+The content may differ from the original repository, as it has been sorted, duplicates have been removed, and lines beginning with '#' have been discarded.

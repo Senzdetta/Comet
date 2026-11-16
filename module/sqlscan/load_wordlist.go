@@ -31,16 +31,16 @@ func LoadWordlist(
         }
     }
 
-    if path == "embedded" {
+    if path == "" {
         err := fs.WalkDir(
-            embeddedFS,
-            "wordlist/sqlscan",
-            func(
-                p string, d fs.DirEntry, err error,
+            embeddedFS, "payload", func(
+                p string, d fs.DirEntry,
+                err error,
             ) error {
                 if err != nil {
                     return err
                 }
+
                 if !d.IsDir() && strings.HasSuffix(
                     strings.ToLower(d.Name()),
                     ".txt",
@@ -50,9 +50,11 @@ func LoadWordlist(
                         return err
                     }
                     defer file.Close()
+
                     scanner := bufio.NewScanner(file)
                     processScanner(scanner)
                 }
+
                 return nil
             },
         )
@@ -66,9 +68,9 @@ func LoadWordlist(
 
     if info.IsDir() {
         err = filepath.Walk(
-            path,
-            func(
-                p string, i os.FileInfo, e error,
+            path, func(
+                p string, i os.FileInfo,
+                e error,
             ) error {
                 if e != nil {
                     return e
@@ -83,9 +85,11 @@ func LoadWordlist(
                         return err
                     }
                     defer file.Close()
+
                     scanner := bufio.NewScanner(file)
                     processScanner(scanner)
                 }
+
                 return nil
             },
         )
@@ -95,6 +99,7 @@ func LoadWordlist(
             return nil, err
         }
         defer file.Close()
+
         scanner := bufio.NewScanner(file)
         processScanner(scanner)
     }

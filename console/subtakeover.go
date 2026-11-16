@@ -9,48 +9,58 @@ import (
     "github.com/Senzdetta/Comet/utils/invinput"
 )
 
-type SubTakeover struct{}
-func (c SubTakeover) Execute(args []string) {
+type Subtakeover struct{}
+func (c Subtakeover) Execute(args []string) {
     if len(args) < 3 {
         invinput.MissingArgument()
         os.Exit(1)
     }
 
     targetDomain := ""
-    threads := 100
-    timeout := 10
-    retries := 5
+    threads := 50
+    timeout := 15
+    dnsResolv := "8.8.8.8:53"
+    wordlistPath := ""
+    fingerprintPath := ""
 
     for i := 2; i < len(args); i++ {
         switch args[i] {
             case "--threads":
                 if i+1 < len(args) {
-                    t, err := strconv.Atoi(args[i+1])
-                    if err == nil {
+                    if t, err := strconv.Atoi(
+                        args[i+1],
+                    ); err == nil {
                         threads = t
                     }
                     i++
                 }
             case "--timeout":
                 if i+1 < len(args) {
-                    t, err := strconv.Atoi(args[i+1])
-                    if err == nil {
+                    if t, err := strconv.Atoi(
+                        args[i+1],
+                    ); err == nil {
                         timeout = t
                     }
                     i++
                 }
-            case "--retry":
+            case "--dnsresolv":
                 if i+1 < len(args) {
-                    r, err := strconv.Atoi(args[i+1])
-                    if err == nil {
-                        retries = r
-                    }
+                    dnsResolv = args[i+1]
+                    i++
+                }
+            case "--wordlist":
+                if i+1 < len(args) {
+                    wordlistPath = args[i+1]
+                    i++
+                }
+            case "--fingerprint":
+                if i+1 < len(args) {
+                    fingerprintPath = args[i+1]
                     i++
                 }
             default:
-                if (targetDomain == "" &&
-                    args[i][0] != '-') {
-                        targetDomain = args[i]
+                if targetDomain == "" && args[i][0] != '-' {
+                    targetDomain = args[i]
                 }
         }
     }
@@ -64,7 +74,9 @@ func (c SubTakeover) Execute(args []string) {
         targetDomain,
         threads,
         timeout,
-        retries,
+        dnsResolv,
+        wordlistPath,
+        fingerprintPath,
     )
 }
 

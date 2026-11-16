@@ -6,10 +6,7 @@ import (
     "net/url"
 )
 
-func buildTestURLs(
-    baseURL string,
-    payload string,
-) []string {
+func buildTestURLs(baseURL string, payload string) []string {
     u, err := url.Parse(baseURL)
     if err != nil {
         return []string{baseURL + payload}

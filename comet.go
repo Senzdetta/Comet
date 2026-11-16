@@ -11,7 +11,7 @@ import (
 func main() {
     args := os.Args[1:]
     input := strings.Join(args, " ")
-    console.CometConsole(input)
+    console.Console(input)
 }
 
 // Copyright (c) 2026 Senzdetta

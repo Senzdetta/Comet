@@ -3,38 +3,36 @@
 package portscan
 
 import (
-    "fmt"
-    "net"
     "time"
-    "github.com/Senzdetta/Comet/utils/color"
-    "github.com/Senzdetta/Comet/utils/logger"
 )
 
-func scanRun(ip string, port int) bool {
-    log := logger.NewLogger("portscan")
-    address := fmt.Sprintf("%s:%d", ip, port)
-
-    conn, err := net.DialTimeout(
-        "tcp", address, 200*time.Millisecond,
-    )
-
-    if err != nil {
-        return false
+func scanRun(
+    ip string,
+    port int,
+    proto string,
+    timeout time.Duration,
+) Result {
+    r := Result{
+        Port: port,
+        Proto: proto,
     }
-    defer conn.Close()
 
-    fmt.Printf(
-        "%s[+] %sPort: %s%d %sopen\n",
-        color.GG, color.N, color.GG, port, color.N,
-    )
+    switch proto {
+        case "tcp":
+            r.Status, r.Banner = scanTCP(
+                ip, port, timeout,
+            )
+        case "udp":
+            r.Status, r.Banner = scanUDP(
+                ip, port, timeout,
+            )
+        case "sctp":
+            r.Status, r.Banner = scanSCTP(
+                ip, port, timeout,
+            )
+    }
 
-    logMess := fmt.Sprintf(
-        "Port: %s:%d open",
-        ip, port,
-    )
-    log.Log(":", logMess)
-
-    return true
+    return r
 }
 
 // Copyright (c) 2026 Senzdetta

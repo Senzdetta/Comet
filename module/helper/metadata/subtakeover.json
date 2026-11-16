@@ -1,5 +1,0 @@
-{
-    "Command": "--subtakeover",
-    "Args": "<domain> [--threads <value>] [--timeout <value>] [--retry <value>]",
-    "Description": "check subdomains for dangling records and potential takeover vulnerabilities"
-}
