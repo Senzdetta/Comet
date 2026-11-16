@@ -1,9 +1,9 @@
 checkout: {
-    'ruby/gitignore_generator' -> '.action/gitignore_generator.rb'
-    'ruby/gitattributes_generator' -> '.action/gitattributes_generator.rb'
-    'ruby/whymd_generator' -> '.action/whymd_generator.rb'
-    'ruby/version_generator' -> '.action/version_generator.rb'
+    'ruby/gitignore' -> '.action/gitignore.rb'
+    'ruby/gitattributes' -> '.action/gitattributes.rb'
+    'ruby/whymd' -> '.action/whymd.rb'
+    'ruby/vergen' -> '.action/vergen.rb'
 
-    'ruby/credits_generator' -> '.action/credits_generator.rb'
+    'ruby/creditsgen' -> '.action/creditsgen.rb'
     'ruby/srmdup' -> '.action/srmdup.rb'
 }
