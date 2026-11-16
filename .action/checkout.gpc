@@ -1,18 +1,18 @@
 checkout: {
-    'ruby/vergen' -> '.action/vergen.rb'
     'ruby/gitignore' -> '.action/gitignore.rb'
     'ruby/gitattributes' -> '.action/gitattributes.rb'
     'ruby/iugen' -> '.action/iugen.rb'
     'ruby/disclaimergen' -> '.action/disclaimergen.rb'
     'ruby/whymd' -> '.action/whymd.rb'
-    'ruby/moregen' -> '.action/moregen.rb'
 
     'ruby/creditsgen' -> '.action/creditsgen.rb'
     'ruby/srmdup' -> '.action/srmdup.rb'
+
+    'ruby/moregen' -> '.action/moregen.rb'
+    'ruby/vergen' -> '.action/vergen.rb'
 }
 
 execute: {
-//    'vergen.rb'
     'gitignore.rb'
     'gitattributes.rb'
     'iugen.rb'
@@ -23,4 +23,5 @@ execute: {
     'srmdup.rb'
 
     'moregen.rb'
+    'vergen.rb'
 }
