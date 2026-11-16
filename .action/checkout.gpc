@@ -1,12 +1,26 @@
 checkout: {
+    'ruby/vergen' -> '.action/1vergen.rb'
     'ruby/gitignore' -> '.action/gitignore.rb'
     'ruby/gitattributes' -> '.action/gitattributes.rb'
-    'ruby/whymd' -> '.action/whymd.rb'
-    'ruby/disclaimergen' -> '.action/disclaimergen.rb'
-    'ruby/moregen' -> '.action/moregen.rb'
     'ruby/iugen' -> '.action/iugen.rb'
-    'ruby/vergen' -> '.action/1_vergen.rb'
+    'ruby/disclaimergen' -> '.action/disclaimergen.rb'
+    'ruby/whymd' -> '.action/whymd.rb'
+    'ruby/moregen' -> '.action/moregen.rb'
 
     'ruby/creditsgen' -> '.action/creditsgen.rb'
     'ruby/srmdup' -> '.action/srmdup.rb'
+}
+
+execute: {
+    'vergen.rb'
+    'gitignore.rb'
+    'gitattributes.rb'
+    'iugen.rb'
+    'disclaimergen.rb'
+    'whymd.rb'
+
+    'creditsgen.rb'
+    'srmdup.rb'
+
+    'moregen.rb'
 }
