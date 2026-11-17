@@ -4,6 +4,7 @@ checkout: {
     'ruby/iugen' -> '.action/iugen.rb'
     'ruby/disclaimergen' -> '.action/disclaimergen.rb'
     'ruby/whymd' -> '.action/whymd.rb'
+    'ruby/vscode_settings' -> '.action/vscode_settings.rb'
 
     'ruby/creditsgen' -> '.action/creditsgen.rb'
     'ruby/srmdup' -> '.action/srmdup.rb'
@@ -19,6 +20,7 @@ execute: {
     'iugen.rb'
     'disclaimergen.rb'
     'whymd.rb'
+    'vscode_settings.rb'
 
     'creditsgen.rb'
     'srmdup.rb'
