@@ -3,6 +3,7 @@
 package help
 
 import (
+    "os"
     "fmt"
     "encoding/json"
     "io/fs"
@@ -12,8 +13,8 @@ import (
 )
 
 func Execute() {
-    banner.Show()
-    birthday.CometBirthDay()
+    banner.Execute()
+    birthday.Execute()
 
     fmt.Printf(
         "%sUsage: %scomet %s<option> [<args>]%s\n",
@@ -28,7 +29,8 @@ func Execute() {
 
     files, err := fs.Glob(MetadataFS, "metadata/*.json")
     if err != nil {
-        fmt.Printf(
+        fmt.Fprintf(
+            os.Stderr,
             "%s[!] %sError reading config: %s%s%s\n",
             color.R, color.N, color.GG, err, color.N,
         )

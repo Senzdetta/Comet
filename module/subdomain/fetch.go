@@ -42,7 +42,7 @@ func fetch(
 
     for i := 0; i < retries; i++ {
         pcat.Printf(
-            "%s[!] %sUnable to connect to API, retrying %s(%s%d%s/%s%d%s)%s",
+            "%s[!] %sConnection unstable, retrying api %s(%s%d%s/%s%d%s)%s",
             color.R, color.N,
             color.DG, color.GG, i+1, color.DG,
             color.GG, retries, color.DG, color.N,

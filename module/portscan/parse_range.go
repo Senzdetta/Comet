@@ -3,6 +3,7 @@
 package portscan
 
 import (
+    "os"
     "fmt"
     "strings"
     "strconv"
@@ -13,6 +14,7 @@ func ParseRange(input string) (int, int, error) {
     parts := strings.Split(input, ":")
     if len(parts) != 2 {
         fmt.Printf(
+            os.Stderr,
             "%s[!] %sInvalid format %s(%suse: %sstart%s:%send%s)%s\n",
             color.R, color.N,
             color.DG, color.N,
@@ -26,7 +28,8 @@ func ParseRange(input string) (int, int, error) {
     end, err2 := strconv.Atoi(parts[1])
 
     if err1 != nil || err2 != nil {
-        fmt.Printf(
+        fmt.Fprintf(
+            os.Stderr,
             "%s[!] %sInvalid number!\n",
             color.R, color.N,
         )
@@ -35,7 +38,8 @@ func ParseRange(input string) (int, int, error) {
     }
 
     if start < 1 || end > 65535 || start > end {
-        fmt.Printf(
+        fmt.Fprintf(
+            os.Stderr,
             "%s[!] %sInvalid range %s(%s1-65535%s)%s\n",
             color.R, color.N, color.DG, color.GG, color.DG, color.N,
         )

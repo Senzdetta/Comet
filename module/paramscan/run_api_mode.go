@@ -3,6 +3,7 @@
 package paramscan
 
 import (
+    "os"
     "time"
     "bufio"
     "strings"
@@ -87,7 +88,7 @@ func runAPIMode(opts Options) {
 
     for i := 0; i < opts.Retry; i++ {
         pcat.Printf(
-            "%s[!] %sConnecting to API, retrying %s(%s%d%s/%s%d%s)%s",
+            "%s[!] %sConnection unstable, retrying api %s(%s%d%s/%s%d%s)%s",
             color.R, color.N,
             color.DG, color.GG, i+1, color.DG,
             color.CC, opts.Retry, color.DG, color.N,
@@ -116,7 +117,8 @@ func runAPIMode(opts Options) {
     fmt.Printf("\r\x1b[K")
 
     if err != nil || resp == nil {
-        fmt.Printf(
+        fmt.Fprintf(
+            os.Stderr,
             "%s[!] %sFailed to connect to API: %s%v%s\n",
             color.R, color.N, color.GG, err, color.N,
         )
@@ -146,7 +148,8 @@ func runAPIMode(opts Options) {
     }
 
     if len(patterns) == 0 {
-        fmt.Printf(
+        fmt.Fprintf(
+            os.Stderr,
             "%s[!] %sNo parameterized urls found!\n",
             color.R, color.N,
         )
@@ -236,7 +239,8 @@ func runAPIMode(opts Options) {
     }
 
     if len(paramResults) == 0 {
-        fmt.Printf(
+        fmt.Fprintf(
+            os.Stderr,
             "%s[!] %sNo active parameters found!\n",
             color.R, color.N,
         )

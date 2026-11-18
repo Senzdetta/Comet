@@ -36,7 +36,8 @@ func Takeover(
     } else {
         f, err := os.Open(wordlistPath)
         if err != nil {
-            fmt.Printf(
+            fmt.Fprintf(
+                os.Stderr,
                 "%s[!] %sError opening wordlist: %s%v%s\n",
                 color.R, color.N, color.GG, err, color.N,
             )
@@ -129,7 +130,8 @@ func Takeover(
     )
 
     if len(subs) == 0 {
-        fmt.Printf(
+        fmt.Fprintf(
+            os.Stderr,
             "%s[!] %sNo subdomains found!\n",
             color.R, color.N,
         )
@@ -230,7 +232,8 @@ func Takeover(
     fmt.Printf("\r\x1b[K")
 
     if len(takeoverResults) == 0 {
-        fmt.Printf(
+        fmt.Fprintf(
+            os.Stderr,
             "%s[!] %sNo takeover vulnerability found!\n",
             color.R, color.N,
         )

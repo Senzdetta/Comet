@@ -4,16 +4,19 @@ package invinput
 
 import (
     "fmt"
+    "os"
     "github.com/Senzdetta/Comet/utils/color"
 )
 
 func MissingArgument() {
-    fmt.Printf(
+    fmt.Fprintf(
+        os.Stderr,
         "%s[!] %sMissing argument!\n",
         color.R, color.N,
     )
 
-    fmt.Printf(
+    fmt.Fprintf(
+        os.Stderr,
         "%s[!] %sTry: %scomet --help%s\n",
         color.R, color.N, color.GG, color.N,
     )

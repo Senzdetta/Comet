@@ -3,6 +3,7 @@
 package portscan
 
 import (
+    "os"
     "errors"
     "fmt"
     "net"
@@ -59,7 +60,8 @@ func scanSCTP(
                 ) {
                     sctpWarn.Do(
                         func() {
-                            fmt.Printf(
+                            fmt.Fprintf(
+                                os.Stderr,
                                 "%s[!] %sSTCP not supported by kernel %s(%smodprobe sctp%s)%s\n",
                                 color.R, color.N, color.DG, color.GG, color.DG, color.N,
                             )

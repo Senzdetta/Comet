@@ -16,9 +16,11 @@ func loadLines(customPath string, embeddedPath string) []string {
         if _, err := os.Stat(customPath); err == nil {
             file, err := os.Open(customPath)
             if err != nil {
-                fmt.Printf(
-                    "%s[!] %sFailed to open file %s: %v\n",
-                    color.R, color.N, customPath, err,
+                fmt.Fprintf(
+                    os.Stderr,
+                    "%s[!] %sFailed to open file: %s%s %s(%s%v%s)%s\n",
+                    color.R, color.N, color.GG, customPath,
+                    color.DG, color.GG, err, color.DG, color.N,
                 )
                 return nil
             }

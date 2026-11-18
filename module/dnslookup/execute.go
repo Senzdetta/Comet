@@ -3,6 +3,7 @@
 package dnslookup
 
 import (
+    "os"
     "fmt"
     "github.com/Senzdetta/Comet/utils/color"
     "github.com/Senzdetta/Comet/utils/pcat"
@@ -80,7 +81,8 @@ func Execute(cfg Config) {
     } else if cfg.Mode == "api" {
         results = runAPILookup(cfg)
     } else {
-        fmt.Printf(
+        fmt.Fprintf(
+            os.Stderr,
             "%s[!] %sInvalid mode: %s%s%s\n",
             color.R, color.N, color.GG, cfg.Mode, color.N,
         )

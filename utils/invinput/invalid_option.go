@@ -4,16 +4,19 @@ package invinput
 
 import (
     "fmt"
+    "os"
     "github.com/Senzdetta/Comet/utils/color"
 )
 
 func InvalidOption(input string) {
-    fmt.Printf(
+    fmt.Fprintf(
+        os.Stderr,
         "%s[!] %sInvalid option: %s%s%s\n",
         color.R, color.N, color.GG, input, color.N,
     )
 
-    fmt.Printf(
+    fmt.Fprintf(
+        os.Stderr,
         "%s[!] %sTry: %scomet --help%s\n",
         color.R, color.N, color.GG, color.N,
     )

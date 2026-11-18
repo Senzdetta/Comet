@@ -47,7 +47,8 @@ func (c Tracelink) Execute(args []string) {
     }
 
     if threads <= 0 {
-        fmt.Printf(
+        fmt.Fprintf(
+            os.Stderr,
             "%s[!] %sInvalid threads value!\n",
             color.R, color.N,
         )
@@ -55,14 +56,20 @@ func (c Tracelink) Execute(args []string) {
     }
 
     if timeout <= 0 {
-        fmt.Printf(
+        fmt.Fprintf(
+            os.Stderr,
             "%s[!] %sInvalid timeout value!\n",
             color.R, color.N,
         )
         os.Exit(1)
     }
 
-    tracelink.Execute(target, threads, timeout, recursive)
+    tracelink.Execute(
+        target,
+        threads,
+        timeout,
+        recursive,
+    )
 }
 
 // Copyright (c) 2026 Senzdetta

@@ -29,7 +29,8 @@ func (c Header) Execute(args []string) {
             if err == nil && t > 0 {
                 timeoutSec = time.Duration(t) * time.Second
             } else {
-                fmt.Printf(
+                fmt.Fprintf(
+                    os.Stderr,
                     "%s[!] %sInvalid timeout value: %s%s%s\n",
                     color.R, color.N, color.GG, args[i+1], color.N,
                 )
@@ -45,7 +46,8 @@ func (c Header) Execute(args []string) {
             } else if val == "true" {
                 followRedirect = true
             } else {
-                fmt.Printf(
+                fmt.Fprintf(
+                    os.Stderr,
                     "%s[!] %sInvalid redirect value: %s%s%s\n",
                     color.R, color.N, color.GG, val, color.N,
                 )

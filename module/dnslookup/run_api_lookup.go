@@ -3,14 +3,15 @@
 package dnslookup
 
 import (
+    "os"
     "fmt"
     "bufio"
     "strings"
     "net"
     "time"
+    "net/http"
     "github.com/Senzdetta/Comet/utils/color"
     "github.com/Senzdetta/Comet/utils/pcat"
-    "net/http"
 )
 
 func runAPILookup(cfg Config) []DNSResult {
@@ -73,7 +74,8 @@ func runAPILookup(cfg Config) []DNSResult {
     }
 
     if err != nil || resp == nil {
-        fmt.Printf(
+        fmt.Fprintf(
+            os.Stderr,
             "%s[!] %sFailed to connect to api: %s%v%s\n",
             color.R, color.N, color.GG, err, color.N,
         )
@@ -82,7 +84,8 @@ func runAPILookup(cfg Config) []DNSResult {
     defer resp.Body.Close()
 
     if resp.StatusCode != 200 {
-        fmt.Printf(
+        fmt.Fprintf(
+            os.Stderr,
             "%s[!] %sServer returned error code: %s%d%s\n",
             color.R, color.N, color.GG, resp.StatusCode, color.N,
         )
@@ -95,7 +98,8 @@ func runAPILookup(cfg Config) []DNSResult {
     for scanner.Scan() {
         line := scanner.Text()
         if strings.Contains(line, "API count exceeded") {
-            fmt.Printf(
+            fmt.Fprintf(
+                os.Stderr,
                 "%s[!] %sRate limit reached!\n",
                 color.R, color.N,
             )

@@ -83,7 +83,8 @@ func (c Paramscan) Execute(args []string) {
     }
 
     if mode != "native" && mode != "api" {
-        fmt.Printf(
+        fmt.Fprintf(
+            os.Stderr,
             "%s[!] %sInvalid mode: %s%s%s\n",
             color.R, color.N, color.GG, mode, color.N,
         )
@@ -91,7 +92,8 @@ func (c Paramscan) Execute(args []string) {
     }
 
     if threads <= 0 {
-        fmt.Printf(
+        fmt.Fprintf(
+            os.Stderr,
             "%s[!] %sInvalid threads value!\n",
             color.R, color.N,
         )
@@ -99,7 +101,8 @@ func (c Paramscan) Execute(args []string) {
     }
 
     if timeout <= 0 {
-        fmt.Printf(
+        fmt.Fprintf(
+            os.Stderr,
             "%s[!] %sInvalid timeout value!\n",
             color.R, color.N,
         )
@@ -107,7 +110,8 @@ func (c Paramscan) Execute(args []string) {
     }
 
     if retry <= 0 {
-        fmt.Printf(
+        fmt.Fprintf(
+            os.Stderr,
             "%s[!] %sInvalid retry value!\n",
             color.R, color.N,
         )

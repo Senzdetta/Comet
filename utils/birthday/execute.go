@@ -8,7 +8,7 @@ import (
     "github.com/Senzdetta/Comet/utils/color"
 )
 
-func CometBirthDay() {
+func Execute() {
     birthDate := "03-22"
     now := time.Now().Format("01-02")
     if now == birthDate {

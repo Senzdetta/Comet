@@ -12,7 +12,6 @@ const (
     CC = "\x1b[0;36m"
     YY = "\x1b[0;33m"
     WW = "\x1b[0;37m"
-    PP = "\x1b[0;35m"
 )
 
 // Copyright (c) 2026 Senzdetta

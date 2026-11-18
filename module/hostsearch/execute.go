@@ -3,6 +3,7 @@
 package hostsearch
 
 import (
+    "os"
     "bufio"
     "fmt"
     "net"
@@ -17,9 +18,10 @@ func Execute(domain, apiURL string, timeout int, retries int) {
     fmt.Printf("\x1b[?25l")
     defer fmt.Printf("\x1b[?25h")
 
-    fmt.Printf(
-        "%s[*] %sInfo: this is a deprecated feature, use %s--subdomain %sinstead.\n",
-        color.B, color.N, color.GG, color.N,
+    fmt.Fprintf(
+        os.Stderr,
+        "%s[!] %sWarning: this is a deprecated feature, use %s--subdomain %sinstead.\n",
+        color.YY, color.N, color.GG, color.N,
     )
 
     fmt.Println()
@@ -117,7 +119,8 @@ func Execute(domain, apiURL string, timeout int, retries int) {
     }
 
     if err != nil || resp == nil {
-        fmt.Printf(
+        fmt.Fprintf(
+            os.Stderr,
             "%s[!] %sFailed to connect to api: %s%v%s\n",
             color.R, color.N, color.GG, err, color.N,
         )
@@ -126,7 +129,8 @@ func Execute(domain, apiURL string, timeout int, retries int) {
     defer resp.Body.Close()
 
     if resp.StatusCode != 200 {
-        fmt.Printf(
+        fmt.Fprintf(
+            os.Stderr,
             "%s[!] %sServer returned error code: %s%d%s\n",
             color.R, color.N, color.GG, resp.StatusCode, color.N,
         )
@@ -139,7 +143,8 @@ func Execute(domain, apiURL string, timeout int, retries int) {
     for scanner.Scan() {
         line := scanner.Text()
         if strings.Contains(line, "API count exceeded") {
-            fmt.Printf(
+            fmt.Fprintf(
+                os.Stderr,
                 "%s[!] %sRate limit reached!\n",
                 color.R, color.N,
             )
@@ -161,7 +166,8 @@ func Execute(domain, apiURL string, timeout int, retries int) {
     }
 
     if len(list) == 0 {
-        fmt.Printf(
+        fmt.Fprintf(
+            os.Stderr,
             "%s[!] %sNo data found or target invalid!\n",
             color.R, color.N,
         )

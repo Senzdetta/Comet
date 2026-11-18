@@ -3,6 +3,7 @@
 package header
 
 import (
+    "os"
     "fmt"
     "strings"
     "time"
@@ -96,7 +97,8 @@ func Execute(
         req.Method = "GET"
         resp, err = client.Do(req)
         if err != nil {
-            fmt.Printf(
+            fmt.Fprintf(
+                os.Stderr,
                 "%s[!] %sError connecting to target: %s%v%s\n",
                 color.R, color.N, color.GG, err, color.N,
             )

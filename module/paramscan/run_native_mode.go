@@ -3,6 +3,7 @@
 package paramscan
 
 import (
+    "os"
     "sync"
     "time"
     "fmt"
@@ -25,9 +26,10 @@ func runNativeMode(opts Options) {
 
     parsedURL, err := url.Parse(baseURL)
     if err != nil {
-        fmt.Printf(
-            "%s[!] %sInvalid target URL: %v\n",
-            color.R, color.N, err,
+        fmt.Fprintf(
+            os.Stderr,
+            "%s[!] %sInvalid target URL: %s%v%s\n",
+            color.R, color.N, color.GG, err, color.N,
         )
         return
     }
@@ -52,7 +54,8 @@ func runNativeMode(opts Options) {
     )
 
     if len(words) == 0 {
-        fmt.Printf(
+        fmt.Fprintf(
+            os.Stderr,
             "%s[!] %sWordlist is empty!\n",
             color.R, color.N,
         )
@@ -208,7 +211,8 @@ func runNativeMode(opts Options) {
     fmt.Printf("\r\x1b[K")
 
     if len(paramResults) == 0 {
-        fmt.Printf(
+        fmt.Fprintf(
+            os.Stderr,
             "%s[!] %sNo active parameters found!\n",
             color.R, color.N,
         )

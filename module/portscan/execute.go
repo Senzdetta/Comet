@@ -22,7 +22,8 @@ func Execute(
     if servicePath != "" {
         _, err := os.Stat(servicePath)
         if err != nil {
-            fmt.Printf(
+            fmt.Fprintf(
+                os.Stderr,
                 "%s[!] %sFailed to open service: %s%s%s\n",
                 color.R, color.N, color.GG, servicePath, color.N,
             )
@@ -85,7 +86,8 @@ func Execute(
     }
 
     if !skipHostCheck && !checkHost(ip) {
-        fmt.Printf(
+        fmt.Fprintf(
+            os.Stderr,
             "%s[!] %sHost: %s%s %sis down!\n",
             color.R, color.N, color.GG, ip, color.N,
         )
@@ -232,9 +234,10 @@ func Execute(
     fmt.Printf("\r\x1b[K")
 
     if len(portResults) == 0 {
-        fmt.Printf(
-            "%s[*] %sNo port matched on %s%s%s\n",
-            color.B, color.N, color.GG, ip, color.N,
+        fmt.Fprintf(
+            os.Stderr,
+            "%s[!] %sNo port matched on ip: %s%s%s\n",
+            color.R, color.N, color.GG, ip, color.N,
         )
         return
     }

@@ -3,6 +3,7 @@
 package tracelink
 
 import (
+    "os"
     "fmt"
     "sync"
     "github.com/Senzdetta/Comet/utils/color"
@@ -125,7 +126,8 @@ func Execute(
     fmt.Printf("\r\x1b[K")
 
     if len(traceResults) == 0 {
-        fmt.Printf(
+        fmt.Fprintf(
+            os.Stderr,
             "%s[!] %sNo links found!\n",
             color.R, color.N,
         )

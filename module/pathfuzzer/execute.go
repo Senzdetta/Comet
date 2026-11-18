@@ -3,6 +3,7 @@
 package pathfuzzer
 
 import (
+    "os"
     "fmt"
     "net"
     "sort"
@@ -33,7 +34,8 @@ func Execute(
     )
 
     if err != nil {
-        fmt.Printf(
+        fmt.Fprintf(
+            os.Stderr,
             "%s[!] %sWordlist: %s%s %snot found!\n",
             color.R, color.N, color.GG, wordlist, color.N,
         )
@@ -56,7 +58,8 @@ func Execute(
 
     _, err = client.Head(target)
     if err != nil {
-        fmt.Printf(
+        fmt.Fprintf(
+            os.Stderr,
             "%s[!] %sTarget: %s%s %snot responding!\n",
             color.R, color.N, color.GG, target, color.N,
         )

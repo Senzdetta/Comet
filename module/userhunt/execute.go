@@ -31,7 +31,8 @@ func Execute(
     if wordlistPath == "" {
         file, err := SitesFS.Open("sites/sites.txt")
         if err != nil {
-            fmt.Printf(
+            fmt.Fprintf(
+                os.Stderr,
                 "%s[!] %sEmbedded list not found!\n",
                 color.R, color.N,
             )
@@ -49,7 +50,8 @@ func Execute(
     } else {
         file, err := os.Open(wordlistPath)
         if err != nil {
-            fmt.Printf(
+            fmt.Fprintf(
+                os.Stderr,
                 "%s[!] %sWordlist file not found: %s%v%s\n",
                 color.R, color.N, color.GG, err, color.N,
             )
@@ -67,7 +69,8 @@ func Execute(
 
         loadErr = scanner.Err()
         if loadErr != nil {
-            fmt.Printf(
+            fmt.Fprintf(
+                os.Stderr,
                 "%s[!] %sError reading wordlist: %s%v%s\n",
                 color.R, color.N, color.GG, loadErr, color.N,
             )
@@ -77,7 +80,8 @@ func Execute(
 
     total = len(domains)
     if total == 0 {
-        fmt.Printf(
+        fmt.Fprintf(
+            os.Stderr,
             "%s[!] %sNo domains loaded from wordlist!\n",
             color.R, color.N,
         )
@@ -180,7 +184,8 @@ func Execute(
     fmt.Printf("\r\x1b[K")
 
     if len(huntResults) == 0 {
-        fmt.Printf(
+        fmt.Fprintf(
+            os.Stderr,
             "%s[!] %sNo username found!\n",
             color.R, color.N,
         )

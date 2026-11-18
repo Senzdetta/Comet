@@ -3,6 +3,7 @@
 package subdomain
 
 import (
+    "os"
     "context"
     "fmt"
     "sort"
@@ -53,7 +54,8 @@ func Execute(opts Options) {
     } else {
         words, errLoad = loadWordlist(opts.Wordlist)
         if errLoad != nil {
-            fmt.Printf(
+            fmt.Fprintf(
+                os.Stderr,
                 "%s[!] %sWordlist Error: %s%v%s\n",
                 color.R, color.N, color.GG, errLoad, color.N,
             )
@@ -121,7 +123,8 @@ func Execute(opts Options) {
         )
 
         if err != nil {
-            fmt.Printf(
+            fmt.Fprintf(
+                os.Stderr,
                 "%s[!] %sError: %s%v%s\n",
                 color.R, color.N, color.GG, err, color.N,
             )
@@ -136,7 +139,8 @@ func Execute(opts Options) {
     }
 
     if len(rawSubs) == 0 {
-        fmt.Printf(
+        fmt.Fprintf(
+            os.Stderr,
             "%s[!] %sNo subdomains found for: %s%s%s\n",
             color.R, color.N, color.GG, opts.Domain, color.N,
         )
@@ -203,7 +207,8 @@ func Execute(opts Options) {
     }
 
     if len(finalResults) == 0 {
-        fmt.Printf(
+        fmt.Fprintf(
+            os.Stderr,
             "%s[!] %sNo valid subdomains resolved!\n",
             color.R, color.N,
         )

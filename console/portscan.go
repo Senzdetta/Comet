@@ -32,7 +32,8 @@ func (c Portscan) Execute(args []string) {
     if len(rest) > 0 && !strings.HasPrefix(rest[0], "-") {
         st, en, err := portscan.ParseRange(rest[0])
         if err != nil {
-            fmt.Printf(
+            fmt.Fprintf(
+                os.Stderr,
                 "%s[!] %sError parsing range: %s%v%s\n",
                 color.R, color.N, color.GG, err, color.N,
             )

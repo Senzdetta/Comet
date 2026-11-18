@@ -11,7 +11,7 @@ import (
 //go:embed banner.txt
 var asciiFS embed.FS
 
-func Show() {
+func Execute() {
     data, err := asciiFS.ReadFile("banner.txt")
     if err != nil {
         fmt.Printf(

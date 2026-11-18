@@ -3,6 +3,7 @@
 package sqlscan
 
 import (
+    "os"
     "fmt"
     "io"
     "net"
@@ -32,7 +33,8 @@ func Execute(
 
     payloads, err := LoadWordlist(wordlistPath, PayloadFS)
     if err != nil {
-        fmt.Printf(
+        fmt.Fprintf(
+            os.Stderr,
             "%s[!] %sError loading wordlist: %s%v%s\n",
             color.R, color.N, color.GG, err, color.N,
         )
@@ -40,9 +42,10 @@ func Execute(
     }
 
     if len(payloads) == 0 {
-        fmt.Printf(
-            "%s[!] %sNo valid payloads found!%s\n",
-            color.R, color.N, color.N,
+        fmt.Fprintf(
+            os.Stderr,
+            "%s[!] %sNo valid payloads found!\n",
+            color.R, color.N,
         )
         return
     }
@@ -99,7 +102,8 @@ func Execute(
 
     _, err = client.Head(targetURL)
     if err != nil {
-        fmt.Printf(
+        fmt.Fprintf(
+            ks.Stderr,
             "%s[!] %sTarget: %s%s %snot responding!\n",
             color.R, color.N, color.GG, targetURL, color.N,
         )

@@ -33,7 +33,8 @@ func (c Userhunt) Execute(args []string) {
                     if err == nil && t > 0 {
                         maxThreads = t
                     } else {
-                        fmt.Printf(
+                        fmt.Fprintf(
+                            os.Stderr,
                             "%s[!] %sInvalid thread value: %s%s%s\n",
                             color.R, color.N, color.GG, args[i+1], color.N,
                         )
@@ -47,7 +48,8 @@ func (c Userhunt) Execute(args []string) {
                     if err == nil && t > 0 {
                         timeoutSec = time.Duration(t) * time.Second
                     } else {
-                        fmt.Printf(
+                        fmt.Fprintf(
+                            os.Stderr,
                             "%s[!] %sInvalid timeout value: %s%s%s\n",
                             color.R, color.N, color.GG, args[i+1], color.N,
                         )
@@ -63,7 +65,8 @@ func (c Userhunt) Execute(args []string) {
                     } else if val == "false" {
                         checkBody = false
                     } else {
-                        fmt.Printf(
+                        fmt.Fprintf(
+                            os.Stderr,
                             "%s[!] %sInvalid check-body value: %s%s%s\n",
                             color.R, color.N, color.GG, val, color.N,
                         )
