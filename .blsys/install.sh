@@ -1,5 +1,7 @@
 function blsys::install() {
-    import "( universe )"
+    import "(
+        universe
+    )"
 
     while [[ ${#} -gt 0 ]]; do 
         case "${1}" in
@@ -29,8 +31,13 @@ function blsys::install() {
         --print "Compiling: ${color_GG}${__appname__}${color_N}"
     )
 
-    iofs::chmod "( 0755|${__app_path__}/${__appname__} )"
-    iofs::makelink "( default|${__app_path__}/${__appname__} -> ${__bindir__}/${__appname__} )"
+    iofs::chmod "(
+        0755|${__app_path__}/${__appname__}
+    )"
+
+    iofs::makelink "(
+        default|${__app_path__}/${__appname__} -> ${__bindir__}/${__appname__}
+    )"
 
     system::cmdcheck "${__appname__}"
     trap - ERR EXIT
