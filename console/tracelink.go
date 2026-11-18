@@ -6,9 +6,9 @@ import (
     "fmt"
     "os"
     "strconv"
-    "github.com/Senzdetta/Comet/utils/invinput"
-    "github.com/Senzdetta/Comet/utils/color"
     "github.com/Senzdetta/Comet/module/tracelink"
+    "github.com/Senzdetta/Comet/utils/color"
+    "github.com/Senzdetta/Comet/utils/invinput"
 )
 
 type Tracelink struct{}
@@ -19,7 +19,8 @@ func (c Tracelink) Execute(args []string) {
     }
 
     target := args[2]
-    threads := 100
+    threads := 50
+    timeout := 15
     recursive := false
 
     for i := 3; i < len(args); i++ {
@@ -29,6 +30,14 @@ func (c Tracelink) Execute(args []string) {
                     t, err := strconv.Atoi(args[i+1])
                     if err == nil {
                         threads = t
+                    }
+                    i++
+                }
+            case "--timeout":
+                if i+1 < len(args) {
+                    t, err := strconv.Atoi(args[i+1])
+                    if err == nil {
+                        timeout = t
                     }
                     i++
                 }
@@ -45,7 +54,15 @@ func (c Tracelink) Execute(args []string) {
         os.Exit(1)
     }
 
-    tracelink.Tracer(target, threads, recursive)
+    if timeout <= 0 {
+        fmt.Printf(
+            "%s[!] %sInvalid timeout value!\n",
+            color.R, color.N,
+        )
+        os.Exit(1)
+    }
+
+    tracelink.Execute(target, threads, timeout, recursive)
 }
 
 // Copyright (c) 2026 Senzdetta

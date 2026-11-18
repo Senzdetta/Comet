@@ -9,9 +9,10 @@ import (
     "golang.org/x/net/html"
 )
 
-func fetchLinks(target string) []string {
+func fetchLinks(target string, timeout int) []string {
+    tDuration := time.Duration(timeout) * time.Second
     client := &http.Client{
-        Timeout: 10 * time.Second,
+        Timeout: tDuration,
         Transport: &http.Transport{
             DialContext: (&net.Dialer{
                 Timeout: 5 * time.Second,
@@ -39,7 +40,6 @@ func fetchLinks(target string) []string {
                 return links
             case html.StartTagToken, html.SelfClosingTagToken:
                 t := z.Token()
-
                 if t.Data == "a" {
                     for _, attr := range t.Attr {
                         if attr.Key == "href" {

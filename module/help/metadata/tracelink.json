@@ -1,5 +1,5 @@
 {
     "Command": "--tracelink",
-    "Args": "<url> [--threads <value>] [--recursive]",
-    "Description": "extract hyperlinks from a url (supports recursive crawling)"
+    "Args": "<url> [--threads <value>] [--timeout <value>] [--recursive]",
+    "Description": "crawl a url and extract its hyperlinks"
 }

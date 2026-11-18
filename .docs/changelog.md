@@ -75,3 +75,10 @@
 - Removed the dependency on third-party tools for --subtakeover, which now utilizes subdomain.BruteForceDNS instead.
   Also added new options: --dnsresolv <dns>:[<port>], --wordlist <file>, and --fingerprint <file>.
 ```
+
+### 2026-11-18
+```text
+- Added --timeout to --tracelink.
+  And with that, one more todo item is complete.
+  IJ2XIIDXNBQXIIDENFSCASJAM5SXIIDPOV2CA33GEBUXIPZAJZXXI2DJNZTS4ICKOVZXIIDBNZXXI2DFOIQGS3TTORQW4Y3FEBXWMIDUNFWWKIDXMFZXIZLEEBXW4IDTN5WWK5DINFXGOIDNPEQHAYLSMVXHI4ZAMRSXIZLTOQXAU===
+```

@@ -15,21 +15,21 @@ func Console(input string) {
     }
 
     commands := map[string]Command{
-        "--version": Version{},             // ok
-        "--help": Help{},                   // ok
-        "--uwu": Uwu{},                     // ok
-        "--portscan": Portscan{},           // ok
-        "--pathfuzzer": Pathfuzzer{},       // ok
-        "--userhunt": Userhunt{},           // ok
-        "--paramscan": Paramscan{},         // ok
+        "--version": Version{},
+        "--help": Help{},
+        "--uwu": Uwu{},
+        "--portscan": Portscan{},
+        "--pathfuzzer": Pathfuzzer{},
+        "--userhunt": Userhunt{},
+        "--paramscan": Paramscan{},
         "--tracelink": Tracelink{},
-        "--header": Header{},               // ok
-        "--subdomain": Subdomain{},         // ok
-        "--hostsearch": Hostsearch{},       // ok
-        "--dnslookup": Dnslookup{},         // ok
-        "--sqlscan": Sqlscan{},             // ok
-        "--subtakeover": Subtakeover{},     // ok
-        "--corsscan": Corsscan{},           // ok
+        "--header": Header{},
+        "--subdomain": Subdomain{},
+        "--hostsearch": Hostsearch{},
+        "--dnslookup": Dnslookup{},
+        "--sqlscan": Sqlscan{},
+        "--subtakeover": Subtakeover{},
+        "--corsscan": Corsscan{},
     }
 
     if cmd, ok := commands[args[1]]; ok {
