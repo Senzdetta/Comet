@@ -1,0 +1,15 @@
+appname: "comet"
+appsource: "comet.go"
+
+platform: [
+    "linux",
+    "android",
+]
+
+group iargs: {
+
+}
+
+group uargs: {
+
+}
