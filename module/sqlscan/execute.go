@@ -103,7 +103,7 @@ func Execute(
     _, err = client.Head(targetURL)
     if err != nil {
         fmt.Fprintf(
-            ks.Stderr,
+            os.Stderr,
             "%s[!] %sTarget: %s%s %snot responding!\n",
             color.R, color.N, color.GG, targetURL, color.N,
         )

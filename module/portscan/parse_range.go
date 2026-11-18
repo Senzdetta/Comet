@@ -13,7 +13,7 @@ import (
 func ParseRange(input string) (int, int, error) {
     parts := strings.Split(input, ":")
     if len(parts) != 2 {
-        fmt.Printf(
+        fmt.Fprintf(
             os.Stderr,
             "%s[!] %sInvalid format %s(%suse: %sstart%s:%send%s)%s\n",
             color.R, color.N,
