@@ -5,6 +5,7 @@ checkout: {
     'ruby/disclaimergen' -> '.action/disclaimergen.rb'
     'ruby/whymd' -> '.action/whymd.rb'
     'ruby/vscode_settings' -> '.action/vscode_settings.rb'
+    'ruby/blsys' -> '.action/blsys.rb'
 
     'ruby/creditsgen' -> '.action/creditsgen.rb'
     'ruby/srmdup' -> '.action/srmdup.rb'
@@ -21,6 +22,7 @@ execute: {
     'disclaimergen.rb'
     'whymd.rb'
     'vscode_settings.rb'
+    'blsys.rb'
 
     'creditsgen.rb'
     'srmdup.rb'
