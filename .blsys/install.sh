@@ -23,7 +23,7 @@ function blsys::install() {
         command blsys --runcmd "
             command go mod tidy
             command go build \
-                -ldflags='-s -w' \
+                -ldflags='-O3 -s -w' \
                 -trimpath \
                 -o ${__app_path__}/${__appname__} \
                 .
