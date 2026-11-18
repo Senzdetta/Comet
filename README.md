@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://img.shields.io/badge/Comet-v0.1.20261118-blue?style=square&logo=go&v=1" />
+    <img src="https://img.shields.io/badge/Comet-v0.1.20261119-blue?style=square&logo=go&v=1" />
     <img src="https://img.shields.io/badge/Platform-Linux-blue?style=square&logo=linux&v=1" />
     <a href="LICENSE">
         <img src="https://img.shields.io/badge/License-AGPL--3.0-blue?style=square&logo=github&v=1" />
@@ -18,8 +18,8 @@ Comet is a lightweight, high-performance CLI tool built for efficient reconnaiss
 - And more features.
 
 ## Disclaimer
-Please read [disclaimer](.docs/disclaimer.md) before using this tool. </br>
-Use this software at your own risk. </br>
+Please read [disclaimer](.docs/disclaimer.md) before using this tool. <br>
+Use this software at your own risk. <br>
 The author is not responsible for any damage, data loss, or issues that may result from its use.
 
 ## Installation

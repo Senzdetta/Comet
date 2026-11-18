@@ -1,6 +1,6 @@
 output: README.md
 project: Comet
-version: "v0.1.20261118"
+version: "v0.1.20261119"
 language: go
 platform: linux
 license: AGPL-3.0
