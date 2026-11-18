@@ -41,17 +41,7 @@ export __root__="$(
         --rtt 0
 )"; readonly __root__
 
-export manifest="${__root__}/manifest.meta"; readonly manifest
-
 user_platform="$(command blsys --platform)"
-echo -ne "\x1b[1;34m[*] \x1b[0mChecking platform support: \x1b[0;32m${user_platform}\x1b[0m"
-if command blsys --platform --support "${manifest}"; then
-    echo -e " \x1b[1;90m- \x1b[0mexit: \x1b[0;32m${?}\x1b[0m"
-else
-    echo -e " \x1b[1;90m- \x1b[0merror: \x1b[1;31m${?}\x1b[0m"
-    echo -e "\x1b[1;31m[!] \x1b[0mUnsupported platform: \x1b[0;32m${user_platform}\x1b[0m" >&2
-    exit 1
-fi
 
 euid="$(command blsys --geteuid)"
 if [[ "${user_platform}" != 'android' ]]; then
