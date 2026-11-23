@@ -3,9 +3,9 @@
 package pathfuzzer
 
 import (
-    "os"
     "fmt"
     "net"
+    "os"
     "sort"
     "strings"
     "sync"
@@ -29,19 +29,23 @@ func Execute(
         openWords = "wordlist/filedirs.txt"
     }
 
-    scanner, closeFn, total, err := openWordlist(
-        WordlistFS, openWords,
-    )
-
+    words, err := loadWordlistSlice(openWords)
     if err != nil {
+        displayErrWordlist := wordlist
+        if displayErrWordlist == "" {
+            displayErrWordlist = openWords
+        }
+
         fmt.Fprintf(
             os.Stderr,
             "%s[!] %sWordlist: %s%s %snot found!\n",
-            color.R, color.N, color.GG, wordlist, color.N,
+            color.R, color.N, color.GG, displayErrWordlist, color.N,
         )
+
         return
     }
-    defer closeFn()
+
+    total := len(words)
 
     client := &http.Client{
         Timeout: time.Duration(timeout) * time.Second,
@@ -130,101 +134,76 @@ func Execute(
     sem := make(chan struct{}, threads)
 
     var mu sync.Mutex
-    resultsMap := make(map[int][]string)
+    var fuzzResults []FuzzResult
     var dirs []string
+    seenDirs := make(map[string]bool)
 
-    idx := 1
-    for scanner.Scan() {
-        dir := scanner.Text()
+    runBatch := func(prefix string, allowRecurse bool) {
+        for i, w := range words {
+            relPath := w
+            if prefix != "" {
+                relPath = prefix + "/" + w
+            }
 
-        wg.Add(1)
-        sem <- struct{}{}
+            wg.Add(1)
+            sem <- struct{}{}
 
-        go func(i int, d string) {
-            defer wg.Done()
-            fuzz(
-                client, target, d,
-                i, recursive, total,
-                &resultsMap, &dirs, &mu,
-            )
-            <-sem
-        }(idx, dir)
-        idx++
+            go func(idx int, p string) {
+                defer wg.Done()
+                fuzz(
+                    client, target, p,
+                    idx, allowRecurse, total,
+                    &fuzzResults, &dirs, &mu,
+                )
+                <-sem
+            }(i+1, relPath)
+        }
+        wg.Wait()
     }
 
-    wg.Wait()
-
+    runBatch("", recursive)
     if recursive {
-        for _, dir := range dirs {
-            subScanner, subClose, _, err := openWordlist(
-                WordlistFS, wordlist,
-            )
-
-            if err != nil {
+        for dIdx := 0; dIdx < len(dirs); dIdx++ {
+            dir := dirs[dIdx]
+            if seenDirs[dir] {
                 continue
             }
 
-            idx := 1
-            for subScanner.Scan() {
-                sub := strings.TrimSpace(subScanner.Text())
-
-                wg.Add(1)
-                sem <- struct{}{}
-
-                go func(i int, path string) {
-                    defer wg.Done()
-                    fuzz(
-                        client, target, path,
-                        i, false, total,
-                        &resultsMap, &dirs, &mu,
-                    )
-                    <-sem
-                }(idx, dir+"/"+sub)
-                idx++
-            }
-
-            wg.Wait()
-            subClose()
+            seenDirs[dir] = true
+            runBatch(dir, true)
         }
     }
 
     fmt.Printf("\r\x1b[K")
 
-    var fuzzResults []FuzzResult
-    statuses := []int{200, 301, 302}
+    sort.Slice(
+        fuzzResults, func(i, j int) bool {
+            if fuzzResults[i].Status != fuzzResults[j].Status {
+                return fuzzResults[i].Status < fuzzResults[j].Status
+            }
+            return fuzzResults[i].URL < fuzzResults[j].URL
+        },
+    )
 
-    for _, status := range statuses {
-        urls, ok := resultsMap[status]
-        if !ok || len(urls) == 0 {
-            continue
-        }
-
-        sort.Strings(urls)
-        for _, u := range urls {
-            fuzzResults = append(
-                fuzzResults, FuzzResult{
-                    URL: u,
-                    Status: status,
-                },
-            )
-
-            pcat.Mklog(
-                "pathfuzzer",
-                ":",
-                fmt.Sprintf(
-                    "%s (resp: %d)",
-                    u, status,
-                ),
-            )
-        }
+    for _, r := range fuzzResults {
+        pcat.Mklog(
+            "pathfuzzer",
+            ":",
+            fmt.Sprintf(
+                "%s (resp: %d, type %s, lenght: %d)",
+                r.URL, r.Status, r.Type, r.Length,
+            ),
+        )
     }
 
     pcat.Printres(
         fuzzResults, func(r FuzzResult) string {
             return fmt.Sprintf(
-                "%s%s %s(%sresp: %s%d%s)%s",
+                "%s%s %s(%sresp: %s%d%s, %stype %s%s%s, %slenght: %s%d%s)%s",
                 color.GG, r.URL, color.DG, color.N,
-                color.GG, r.Status, color.DG, color.N,
+                color.GG, r.Status, color.DG,
+                color.N, color.GG, r.Type, color.DG,
+                color.N, color.GG, r.Length, color.DG, color.N,
             )
         },
     )

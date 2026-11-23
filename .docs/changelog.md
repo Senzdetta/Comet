@@ -84,3 +84,10 @@
 
 - directing error and warning output to os.Stderr.
 ```
+
+### 2026-11-23
+```text
+- Fixed a --recursive bug in the --pathfuzzer option.
+  Also added further details regarding the findings.
+  IZXXEZ3FOQQGS5BOFYXCA3LZEBYGC4TFNZ2HGIDHMV2CA4DSMV2HI6JAMFXGO4TZEB3WQZLOEBE6FAEZNUQGE5LTPEQHO2LUNAQGG33EMUXCASJAMRXW5YUATF2CA23ON536FAEUJEQGO5LFONZSASJAOJSWC3DMPEQGC3JAMEQGY33TMVZC4CQ=
+```

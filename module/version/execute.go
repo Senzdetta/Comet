@@ -9,7 +9,7 @@ import (
 
 const (
     name = "Comet"
-    version = "v0.1.20261119"
+    version = "v0.1.20261123"
     developer = "Senzdetta"
     homepage = "https://github.com/Senzdetta/Comet"
 )

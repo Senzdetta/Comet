@@ -17,27 +17,31 @@ func fuzz(
     idx int,
     recursive bool,
     total int,
-    results *map[int][]string,
+    results *[]FuzzResult,
     dirs *[]string,
     mu *sync.Mutex,
 ) {
-    directory = strings.TrimSpace(directory)
+    directory = strings.Trim(
+        strings.TrimSpace(directory),
+        "/",
+    )
+
     if directory == "" {
         return
     }
 
-    url := fmt.Sprintf("%s/%s", target, directory)
-    status := 0
+    url := fmt.Sprintf(
+        "%s/%s",
+        target, directory,
+    )
 
-    req, err := http.NewRequest("HEAD", url, nil)
-    if err == nil {
-        var resp *http.Response
-        resp, err = client.Do(req)
+    status, length, contentType, location, bodySample, ok := fetchResponseInfo(
+        client, url,
+    )
 
-        if err == nil {
-            status = resp.StatusCode
-            resp.Body.Close()
-        }
+    if !ok {
+        status = 0
+        length = 0
     }
 
     mu.Lock()
@@ -50,15 +54,25 @@ func fuzz(
     mu.Unlock()
 
     if status == 200 || status == 301 || status == 302 {
-        mu.Lock()
-        (*results)[status] = append((*results)[status], url)
-        mu.Unlock()
+        entryType := detectTypeFromResponse(
+            client, url, status,
+            contentType, location, bodySample,
+        )
 
-        if recursive {
-            mu.Lock()
+        mu.Lock()
+        *results = append(
+            *results, FuzzResult{
+                URL: url,
+                Status: status,
+                Type: entryType,
+                Length: length,
+            },
+        )
+
+        if recursive && entryType == "dir" {
             *dirs = append(*dirs, directory)
-            mu.Unlock()
         }
+        mu.Unlock()
     }
 }
 
