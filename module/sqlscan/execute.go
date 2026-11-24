@@ -3,10 +3,10 @@
 package sqlscan
 
 import (
-    "os"
     "fmt"
     "io"
     "net"
+    "os"
     "sync"
     "time"
     "net/http"
@@ -15,21 +15,11 @@ import (
 )
 
 func Execute(
-    targetURL, wordlistPath string,
+    targetURL, wordlistPath, signaturePath string,
     threads, timeout int,
 ) {
     fmt.Printf("\x1b[?25l")
     defer fmt.Printf("\x1b[?25h")
-
-    fmt.Printf(
-        "%s[*] %sConfigurations:\n",
-        color.B, color.N,
-    )
-
-    pcat.Printstat(
-        "Target",
-        pcat.Disconf(targetURL),
-    )
 
     payloads, err := LoadWordlist(wordlistPath, PayloadFS)
     if err != nil {
@@ -50,10 +40,44 @@ func Execute(
         return
     }
 
+    signatures, err := LoadSignatures(signaturePath, SignatureFS)
+    if err != nil {
+        fmt.Fprintf(
+            os.Stderr,
+            "%s[!] %sError loading signatures: %s%v%s\n",
+            color.R, color.N, color.GG, err, color.N,
+        )
+        return
+    }
+
+    if len(signatures) == 0 {
+        fmt.Fprintf(
+            os.Stderr,
+            "%s[!] %sNo valid signatures found!\n",
+            color.R, color.N,
+        )
+        return
+    }
+
     displayPayload := wordlistPath
     if displayPayload == "" {
         displayPayload = "embedded:payload/"
     }
+
+    displaySignature := signaturePath
+    if displaySignature == "" {
+        displaySignature = "embedded:signature/signatures.txt"
+    }
+
+    fmt.Printf(
+        "%s[*] %sConfigurations:\n",
+        color.B, color.N,
+    )
+
+    pcat.Printstat(
+        "Target",
+        pcat.Disconf(targetURL),
+    )
 
     pcat.Printstat(
         "Payloads",
@@ -61,6 +85,16 @@ func Execute(
             fmt.Sprintf(
                 "%s (%d)",
                 displayPayload, len(payloads),
+            ),
+        ),
+    )
+
+    pcat.Printstat(
+        "Signatures",
+        pcat.Disconf(
+            fmt.Sprintf(
+                "%s (%d)",
+                displaySignature, len(signatures),
             ),
         ),
     )
@@ -166,6 +200,7 @@ func Execute(
                 isVuln, sig := checkVulnerable(
                     bodyStr,
                     resp.StatusCode,
+                    signatures,
                 )
 
                 if isVuln {
@@ -176,15 +211,6 @@ func Execute(
                             Signature: sig,
                             Resp: resp.StatusCode,
                         },
-                    )
-
-                    pcat.Mklog(
-                        "sqlscan",
-                        ":",
-                        fmt.Sprintf(
-                            "%s (signature: %s, resp: %d)",
-                            testURL, sig, resp.StatusCode,
-                        ),
                     )
                     mu.Unlock()
                 }

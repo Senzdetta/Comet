@@ -221,24 +221,6 @@ func Execute(opts Options) {
         },
     )
 
-    for _, res := range finalResults {
-        ipLogPart := ""
-        if res.IPs != "" {
-            ipLogPart = fmt.Sprintf(
-                " [%s]", res.IPs,
-            )
-        }
-
-        pcat.Mklog(
-            "subdomain",
-            ":",
-            fmt.Sprintf(
-                "Found: %s%s",
-                res.Subdomain, ipLogPart,
-            ),
-        )
-    }
-
     pcat.Printres(
         finalResults, func(r SubResult) string {
             ipPart := ""

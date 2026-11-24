@@ -299,15 +299,6 @@ func Execute(
                 Value: valueStr,
             },
         )
-
-        pcat.Mklog(
-            "header",
-            ":",
-            fmt.Sprintf(
-                "%s: %s",
-                key, valueStr,
-            ),
-        )
     }
 
     currentSection := ""

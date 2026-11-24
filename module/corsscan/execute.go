@@ -168,15 +168,6 @@ func Execute(
                         Acac: acac,
                     },
                 )
-
-                pcat.Mklog(
-                    "corsscan",
-                    ":",
-                    fmt.Sprintf(
-                        "%s (severity: %s, acao: %s, acac: %s)",
-                        t, vulnSeverity, acao, acac,
-                    ),
-                )
                 mu.Unlock()
             }
         }(tURL)

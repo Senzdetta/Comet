@@ -6,8 +6,12 @@ import (
     "strings"
 )
 
-func checkVulnerable(body string, statusCode int) (bool, string) {
-    for _, sig := range sqlSignatures {
+func checkVulnerable(
+    body string,
+    statusCode int,
+    signatures []string,
+) (bool, string) {
+    for _, sig := range signatures {
         if strings.Contains(body, sig) {
             return true, "Error-Based: " + sig
         }

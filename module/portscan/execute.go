@@ -242,19 +242,6 @@ func Execute(
         return
     }
 
-    for _, prRes := range portResults {
-        if prRes.Status == "open" {
-            pcat.Mklog(
-                "portscan",
-                ":",
-                fmt.Sprintf(
-                    "Port: %s:%d/%s open",
-                    prRes.IP, prRes.Port, prRes.Proto,
-                ),
-            )
-        }
-    }
-
     pcat.Printres(
         portResults, func(r PortResult) string {
             return fmt.Sprintf(

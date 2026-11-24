@@ -192,17 +192,6 @@ func Execute(
         return
     }
 
-    for _, r := range huntResults {
-        pcat.Mklog(
-            "userhunt",
-            ":",
-            fmt.Sprintf(
-                "Found: %s:%d",
-                r.URL, r.Status,
-            ),
-        )
-    }
-
     pcat.Printres(
         huntResults, func(r Result) string {
             return fmt.Sprintf(

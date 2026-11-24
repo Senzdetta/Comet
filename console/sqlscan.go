@@ -18,14 +18,20 @@ func (c Sqlscan) Execute(args []string) {
 
     targetURL := ""
     wordlist := ""
-    threads := 100
-    timeout := 10
+    signature := ""
+    threads := 50
+    timeout := 15
 
     for i := 2; i < len(args); i++ {
         switch args[i] {
             case "--payload":
                 if i+1 < len(args) {
                     wordlist = args[i+1]
+                    i++
+                }
+            case "--signature":
+                if i+1 < len(args) {
+                    signature = args[i+1]
                     i++
                 }
             case "--threads":
@@ -59,6 +65,7 @@ func (c Sqlscan) Execute(args []string) {
     sqlscan.Execute(
         targetURL,
         wordlist,
+        signature,
         threads,
         timeout,
     )

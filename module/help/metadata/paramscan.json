@@ -1,5 +1,5 @@
 {
     "Command": "--paramscan",
-    "Args": "<url> [--threads <value>] [--timeout <value>] [--mode <native|api> [--api <api>] [--retry <value>] [--fuzz]] [--wordlist <file>] [--valueword <string|file>]",
+    "Args": "<url> [--threads <value>] [--timeout <value>] [--wordlist <file>] [--valueword <string|file>] [--mode <native|api> [--api <api>] [--retry <value>] [--fuzz]]",
     "Description": "discover hidden web parameters and entry points"
 }

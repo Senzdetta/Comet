@@ -91,3 +91,13 @@
   Also added further details regarding the findings.
   IZXXEZ3FOQQGS5BOFYXCA3LZEBYGC4TFNZ2HGIDHMV2CA4DSMV2HI6JAMFXGO4TZEB3WQZLOEBE6FAEZNUQGE5LTPEQHO2LUNAQGG33EMUXCASJAMRXW5YUATF2CA23ON536FAEUJEQGO5LFONZSASJAOJSWC3DMPEQGC3JAMEQGY33TMVZC4CQ=
 ```
+
+### 2026-11-25
+```text
+- Removal of the logger package and its associated code.
+
+- Changes to the display of flags in the --help output.
+
+- Upgrade to the --sqlscan module
+  --sqlscan now accepts the --signature <file> flag for custom signatures.
+```

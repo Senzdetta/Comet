@@ -219,17 +219,6 @@ func runNativeMode(opts Options) {
         return
     }
 
-    for _, r := range paramResults {
-        pcat.Mklog(
-            "paramscan",
-            ":",
-            fmt.Sprintf(
-                "Found: %s:%d",
-                r.URL, r.Status,
-            ),
-        )
-    }
-
     pcat.Printres(
         paramResults, func(r ParamResult) string {
             return fmt.Sprintf(

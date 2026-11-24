@@ -247,21 +247,10 @@ func runAPIMode(opts Options) {
         return
     }
 
-    for _, r := range paramResults {
-        pcat.Mklog(
-            "paramscan",
-            ":",
-            fmt.Sprintf(
-                "Found: %s:%d",
-                r.URL, r.Status,
-            ),
-        )
-    }
-
     pcat.Printres(
         paramResults, func(r ParamResult) string {
             return fmt.Sprintf(
-                "%s%s %(%sstatus: %s%d%s)%s",
+                "%s%s %s(%sstatus: %s%d%s)%s",
                 color.GG, r.URL, color.DG, color.N,
                 color.GG, r.Status, color.DG, color.N,
             )

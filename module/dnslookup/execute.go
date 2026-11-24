@@ -89,19 +89,6 @@ func Execute(cfg Config) {
         return
     }
 
-    if len(results) > 0 {
-        for _, r := range results {
-            pcat.Mklog(
-                "dnslookup",
-                ":",
-                fmt.Sprintf(
-                    "%s: %s",
-                    r.Type, r.Value,
-                ),
-            )
-        }
-    }
-
     pcat.Printres(
         results, func(r DNSResult) string {
             return fmt.Sprintf(

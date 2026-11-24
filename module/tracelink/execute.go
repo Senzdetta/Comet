@@ -134,14 +134,6 @@ func Execute(
         return
     }
 
-    for _, r := range traceResults {
-        pcat.Mklog(
-            "tracelink",
-            ":",
-            fmt.Sprintf("Found: %s", r.TargetLink),
-        )
-    }
-
     pcat.Printres(
         traceResults, func(r TraceResult) string {
             return fmt.Sprintf(

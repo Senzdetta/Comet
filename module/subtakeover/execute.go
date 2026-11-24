@@ -240,17 +240,6 @@ func Takeover(
         return
     }
 
-    for _, res := range takeoverResults {
-        pcat.Mklog(
-            "subtakeover",
-            ":",
-            fmt.Sprintf(
-                "Takeover: %s (%s: %s)",
-                res.Target, res.Provider, res.Signature,
-            ),
-        )
-    }
-
     pcat.Printres(
         takeoverResults, func(r TakeoverResult) string {
             return fmt.Sprintf(

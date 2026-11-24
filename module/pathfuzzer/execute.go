@@ -185,17 +185,6 @@ func Execute(
         },
     )
 
-    for _, r := range fuzzResults {
-        pcat.Mklog(
-            "pathfuzzer",
-            ":",
-            fmt.Sprintf(
-                "%s (resp: %d, type %s, lenght: %d)",
-                r.URL, r.Status, r.Type, r.Length,
-            ),
-        )
-    }
-
     pcat.Printres(
         fuzzResults, func(r FuzzResult) string {
             return fmt.Sprintf(

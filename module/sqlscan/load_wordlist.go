@@ -3,11 +3,11 @@
 package sqlscan
 
 import (
-    "bufio"
     "os"
+    "bufio"
     "strings"
-    "path/filepath"
     "io/fs"
+    "path/filepath"
 )
 
 func LoadWordlist(
@@ -34,7 +34,8 @@ func LoadWordlist(
     if path == "" {
         err := fs.WalkDir(
             embeddedFS, "payload", func(
-                p string, d fs.DirEntry,
+                p string,
+                d fs.DirEntry,
                 err error,
             ) error {
                 if err != nil {
@@ -69,7 +70,8 @@ func LoadWordlist(
     if info.IsDir() {
         err = filepath.Walk(
             path, func(
-                p string, i os.FileInfo,
+                p string,
+                i os.FileInfo,
                 e error,
             ) error {
                 if e != nil {

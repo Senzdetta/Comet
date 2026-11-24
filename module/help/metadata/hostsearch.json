@@ -1,5 +1,5 @@
 {
     "Command": "--hostsearch",
-    "Args": "<host> [--api <api>] [--timeout <value>] [--retry <value>]",
+    "Args": "<host> [--timeout <value>] [--retry <value>] [--api <api>]",
     "Description": "discover virtual hosts and related domains sharing the same host"
 }

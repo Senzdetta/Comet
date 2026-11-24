@@ -174,17 +174,6 @@ func Execute(domain, apiURL string, timeout int, retries int) {
         return
     }
 
-    for _, item := range list {
-        pcat.Mklog(
-            "hostsearch",
-            ":",
-            fmt.Sprintf(
-                "Found: %s:%s",
-                item.Subdomain, item.IPAddress,
-            ),
-        )
-    }
-
     pcat.Printres(
         list, func(r HostResult) string {
             return fmt.Sprintf(

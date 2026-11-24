@@ -1,5 +1,5 @@
 {
     "Command": "--sqlscan",
-    "Args": "<url> [--payload <file|folder>] [--threads <value>] [--timeout <value>]",
+    "Args": "<url> [--threads <value>] [--timeout <value>] [--payload <file|folder>] [--signature <file>]",
     "Description": "inject payloads to discover potential sql injection vulnerabilities"
 }
