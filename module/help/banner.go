@@ -1,6 +1,6 @@
 // https://github.com/Senzdetta/Comet
 
-package banner
+package help
 
 import (
     "embed"
@@ -8,11 +8,11 @@ import (
     "github.com/Senzdetta/Comet/utils/color"
 )
 
-//go:embed banner.txt
+//go:embed banner/banner.txt
 var asciiFS embed.FS
 
-func Execute() {
-    data, err := asciiFS.ReadFile("banner.txt")
+func banner() {
+    data, err := asciiFS.ReadFile("banner/banner.txt")
     if err != nil {
         fmt.Printf(
             "%s[!] %sError loading banner!\n",

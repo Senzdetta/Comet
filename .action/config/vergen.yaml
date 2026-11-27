@@ -1,5 +1,5 @@
-- File: module/version/execute.go
-  replace: "version = "
+- File: utils/vcore/variable.go
+  replace: "Version = "
   new: '"{newstr}"'
 
 - File: .action/config/readmegen.yaml

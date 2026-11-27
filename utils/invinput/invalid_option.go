@@ -5,7 +5,9 @@ package invinput
 import (
     "fmt"
     "os"
+    "strings"
     "github.com/Senzdetta/Comet/utils/color"
+    "github.com/Senzdetta/Comet/utils/vcore"
 )
 
 func InvalidOption(input string) {
@@ -17,8 +19,8 @@ func InvalidOption(input string) {
 
     fmt.Fprintf(
         os.Stderr,
-        "%s[!] %sTry: %scomet --help%s\n",
-        color.R, color.N, color.GG, color.N,
+        "%s[!] %sTry: %s%s --help%s\n",
+        color.R, color.N, color.GG, strings.ToLower(vcore.Name), color.N,
     )
 }
 

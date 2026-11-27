@@ -1,6 +1,6 @@
 // https://github.com/Senzdetta/Comet
 
-package utils
+package vcore
 
 import (
     "os"

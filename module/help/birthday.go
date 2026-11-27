@@ -1,20 +1,21 @@
 // https://github.com/Senzdetta/Comet
 
-package birthday
+package help
 
 import (
     "fmt"
     "time"
     "github.com/Senzdetta/Comet/utils/color"
+    "github.com/Senzdetta/Comet/utils/vcore"
 )
 
-func Execute() {
+func birthday() {
     birthDate := "03-22"
     now := time.Now().Format("01-02")
     if now == birthDate {
         fmt.Printf(
-            "%s› %sHappy birthday for %sComet %s🎉\n",
-            color.R, color.N, color.GG, color.N,
+            "%s› %sHappy birthday for %s%s %s🎉\n",
+            color.R, color.N, color.GG, vcore.Name, color.N,
         )
         fmt.Println()
     }

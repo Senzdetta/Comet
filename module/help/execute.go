@@ -5,20 +5,20 @@ package help
 import (
     "os"
     "fmt"
-    "encoding/json"
+    "strings"
     "io/fs"
+    "encoding/json"
     "github.com/Senzdetta/Comet/utils/color"
-    "github.com/Senzdetta/Comet/utils/banner"
-    "github.com/Senzdetta/Comet/utils/birthday"
+    "github.com/Senzdetta/Comet/utils/vcore"
 )
 
 func Execute() {
-    banner.Execute()
-    birthday.Execute()
+    banner()
+    birthday()
 
     fmt.Printf(
-        "%sUsage: %scomet %s<option> [<args>]%s\n",
-        color.N, color.GG, color.CC, color.N,
+        "%sUsage: %s%s %s<option> [<args>]%s\n",
+        color.N, color.GG, strings.ToLower(vcore.Name), color.CC, color.N,
     )
 
     fmt.Println()
