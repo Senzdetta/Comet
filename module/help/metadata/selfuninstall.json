@@ -1,0 +1,5 @@
+{
+    "Command": "--selfuninstall",
+    "Args": "",
+    "Description": "uninstall this tool"
+}
