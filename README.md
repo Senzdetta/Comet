@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://img.shields.io/badge/Comet-v0.1.20261127-blue?style=square&logo=go&v=1" />
+    <img src="https://img.shields.io/badge/Comet-v0.1.20261128-blue?style=square&logo=go&v=1" />
     <img src="https://img.shields.io/badge/Platform-Linux-blue?style=square&logo=linux&v=1" />
     <a href="LICENSE">
         <img src="https://img.shields.io/badge/License-AGPL--3.0-blue?style=square&logo=github&v=1" />

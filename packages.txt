@@ -1,2 +1,2 @@
-golang
+golang::golang-go::go
 iputils-ping::iputils::-
