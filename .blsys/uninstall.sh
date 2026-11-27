@@ -14,7 +14,7 @@ function blsys::uninstall() {
     format::argsfmt '--home' "${HOME}"
     format::argsfmt --print-endline
 
-    command blsys --remove "${__app_path__}"
+    command blsys --remove "${__root__}"
     command blsys --remove "${__bindir__}/${__appname__}"
 
     trap - ERR EXIT

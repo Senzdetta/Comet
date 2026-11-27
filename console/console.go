@@ -15,8 +15,8 @@ func Console(input string) {
     }
 
     commands := map[string]Command{
-        "--version": Version{},
         "--help": Help{},
+        "--version": Version{},
         "--selfuninstall": Selfuninstall{},
         "--uwu": Uwu{},
         "--portscan": Portscan{},
