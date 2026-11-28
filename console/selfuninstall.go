@@ -8,7 +8,7 @@ import (
 
 type Selfuninstall struct{}
 func (c Selfuninstall) Execute(args []string) {
-    selfuninstall.Execute()
+    selfuninstall.Execute(args)
 }
 
 // Copyright (c) 2026 Senzdetta

@@ -11,7 +11,7 @@ import (
     "github.com/Senzdetta/Comet/utils/vcore"
 )
 
-func Execute() {
+func Execute(args []string) {
     scriptPath := filepath.Join(
         vcore.Root(), "uninstall.sh",
     )
@@ -45,7 +45,8 @@ func Execute() {
         return
     }
 
-    cmd := exec.Command("bash", scriptPath)
+    cmdArgs := append([]string{scriptPath}, args...)
+    cmd := exec.Command("bash", cmdArgs...)
     cmd.Stdin = os.Stdin
     cmd.Stdout = os.Stdout
     cmd.Stderr = os.Stderr

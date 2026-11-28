@@ -1,5 +1,5 @@
 {
     "Command": "--selfuninstall",
-    "Args": "",
+    "Args": "<options...>",
     "Description": "uninstall this tool"
 }
