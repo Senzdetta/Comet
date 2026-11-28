@@ -245,7 +245,7 @@ func Execute(
     pcat.Printres(
         portResults, func(r PortResult) string {
             return fmt.Sprintf(
-                "%s%s:%d%s (%sprotocol: %s%s, %sservice: %s%s, %sstatus: %s%s%s, %sprob: %s%s, %sbanner: %s%s, %sdesc: %s%s%s)",
+                "%s%s:%d%s (%sprotocol: %s%s, %sservice: %s%s, %sstatus: %s%s%s, %sprob: %s%s, %sbanner: %s%s, %sdesc: %s%s%s)%s",
                 color.GG, r.IP, r.Port, color.DG,
                 color.N, color.GG, r.Proto,
                 color.N, color.GG, r.Svc.Name,
@@ -253,6 +253,7 @@ func Execute(
                 color.N, color.GG, r.Svc.Prob,
                 color.N, color.GG, r.Banner,
                 color.N, color.GG, r.Svc.Desc, color.DG,
+                color.N,
             )
         },
     )
