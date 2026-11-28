@@ -1,26 +1,32 @@
 #!/usr/bin/env bash
 # https://github.com/SenzdettaCore/blsys
 
-blsys="${HOME}/go/bin/blsys"
 blsys_url="github.com/SenzdettaCore/blsys@latest"
 msgblsys="Updating"
 
-if [[ ! -f "${blsys}" ]]; then
+if ! command -v go > /dev/null 2>&1; then
+    echo -e "\x1b[1;31m[!] \x1b[0mGolang is not installed!" >&2
+    echo -e "\x1b[1;31m[!] \x1b[0mPlease installing first!" >&2
+    exit 1
+fi
+
+if ! command -v blsys > /dev/null 2>&1; then
     msgblsys="Installing"
-    echo -e "\x1b[0;33m[!] \x1b[0mBuild system: \x1b[0;32m${blsys} \x1b[0mNot found!" >&2
-    if ! command -v go > /dev/null 2>&1; then
-        echo -e "\x1b[1;31m[!] \x1b[0mGolang is not installed!" >&2
-        echo -e "\x1b[1;31m[!] \x1b[0mPlease installed first!" >&2
+    echo -e "\x1b[0;33m[!] \x1b[0mBuild system: \x1b[0;32mblsys \x1b[0mNot found!" >&2
+fi
+
+if [[ -f "${PREFIX:-}/etc/os-release" && ! -d '/storage/emulated/0/Android/data' ]]; then
+    if [[ ${EUID} -ne 0 ]]; then
+        echo -e "\x1b[1;31m[!] \x1b[0mEUID: \x1b[0;32m${EUID} \x1b[0mroot required!" >&2
         exit 1
     fi
 fi
 
-export GOPROXY=direct
-export GOSUMDB=off
-
 echo -ne "\x1b[1;34m[*] \x1b[0m${msgblsys}: \x1b[0;32m${blsys_url}\x1b[0m"
+export GOPROXY='direct'
+export GOBIN="${PREFIX:-/usr}/bin" 
 command go install "${blsys_url}" > /dev/null 2>&1
-if [[ "${?}" -eq 0 ]] then
+if [[ ${?} -eq 0 ]]; then
     echo -e " \x1b[1;90m- \x1b[0mexit: \x1b[0;32m${?}\x1b[0m"
 else
     echo -e " \x1b[1;90m- \x1b[0merror: \x1b[1;31m${?}\x1b[0m"
@@ -28,12 +34,9 @@ else
 fi
 
 unset GOPROXY
-unset GOSUMDB
+unset GOBIN
 unset blsys_url
 unset msgblsys
-
-export PATH="${PATH}:${blsys%/blsys}"; readonly PATH
-unset blsys
 
 export __root__="$(
     command blsys \
@@ -55,7 +58,7 @@ fi
 
 euid="$(command blsys --geteuid)"
 if [[ "${user_platform}" != 'android' ]]; then
-    if [[ ${euid} -eq 0 ]]; then
+    if [[ ${euid} -ne 0 ]]; then
         echo -e "\x1b[1;31m[!] \x1b[0mEUID: \x1b[0;32m${euid} \x1b[0mroot required!" >&2
         exit 1
     fi
@@ -72,6 +75,11 @@ if ((
 fi
 
 source <(command blsys --codegen 'import')
+
+if [[ ! -f "${__root__}/.blsys/install.sh" ]]; then
+    echo -e "\x1b[1;31m[!] \x1b[0mFile: \x1b[0;32m${__root__}/.blsys/install.sh \x1b[0mnot found!" >&2
+    exit 1
+fi
 
 echo -e "\x1b[1;34m[*] \x1b[0mCall: \x1b[0;32mblsys::install\x1b[0m"
 source "${__root__}/.blsys/install.sh"
